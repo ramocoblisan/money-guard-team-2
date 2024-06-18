@@ -1,0 +1,130 @@
+@font-face{
+    font-family: 'Poppins';
+    src: url()//TODO: link catre family google font poppins
+}
+
+
+:root {
+    --font-family: 'Poppins';
+    --primarily-font-size: 16px;
+    --secondary-font-size: 18px;
+    --primarily-line-height: 24px;
+    --secondary-line-height: 21px;
+    --font-weight-regular: 400;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 800;
+    --black-color: #242424;
+    --white-color: #fbfbfb;
+  }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+  
+  body {
+    font-family: var(--font-family), sans-serif;
+    font-weight: var(--font-weight-regular);
+    background-color: #101010;
+  
+    @media screen and (min-width: 768px) {
+      overflow: hidden;
+    }
+  }
+  .modal-open {
+    overflow: hidden;
+  }
+  .modalButtonColor {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+    border: transparent;
+    border-radius: 20px;
+    width: 280px;
+    height: 50px;
+    box-shadow: 1px 9px 15px 0 rgba(0, 0, 0, 0.2);
+    background: linear-gradient(
+      167deg,
+      #ffc727 0%,
+      #9e40ba 50%,
+      #7000ff 85%
+    );
+  
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .modalButton {
+    display: block;
+  
+    margin-right: auto;
+    margin-left: auto;
+    border: transparent;
+    border-radius: 20px;
+    width: 280px;
+    height: 50px;
+    box-shadow: 1px 9px 15px 0 rgba(0, 0, 0, 0.2);
+    background: #fcfcfc;
+  
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #623f8b;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .modalButtonColor {
+      width: 300px;
+    }
+  
+    .modalButton {
+      width: 300px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .modalButtonColor {
+      width: 320px;
+    }
+
+    .modalButton {
+      width: 320px;
+    }
+  }
+  
