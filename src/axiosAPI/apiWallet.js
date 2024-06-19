@@ -5,8 +5,8 @@ export const walletApi = axios.create({
 });
 
 export const setToken = token => {
-  walletApi.defaults.headers.common.Authorization = `Bearer ${token}`;
+  apiWallet.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 export const removeToken = () => {
-  walletApi.defaults.headers.common.Authorization = ``;
+  apiWallet.defaults.headers.common.Authorization = ``;
 };
