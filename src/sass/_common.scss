@@ -1,1 +1,530 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+@font-face{
+    font-family: 'Poppins';
+    src: url()
+    /*--- TODO: link catre family google font poppins*/
+}
+
+
+:root {
+    --font-family: 'Poppins';
+    --primarily-font-size: 16px;
+    --secondary-font-size: 18px;
+    --primarily-line-height: 24px;
+    --secondary-line-height: 21px;
+    --font-weight-regular: 400;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 800;
+    --black-color: #242424;
+    --white-color: #fbfbfb;
+  }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+  
+  body {
+    font-family: var(--font-family), sans-serif;
+    font-weight: var(--font-weight-regular);
+    background-color: #101010;
+  
+    @media screen and (min-width: 768px) {
+      overflow: hidden;
+    }
+  }
+  .modal-open {
+    overflow: hidden;
+  }
+  .modalButtonColor {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+    border: transparent;
+    border-radius: 20px;
+    width: 280px;
+    height: 50px;
+    box-shadow: 1px 9px 15px 0 rgba(0, 0, 0, 0.2);
+    background: linear-gradient(
+      167deg,
+      #ffc727 0%,
+      #9e40ba 50%,
+      #7000ff 85%
+    );
+  
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .modalButton {
+    display: block;
+  
+    margin-right: auto;
+    margin-left: auto;
+    border: transparent;
+    border-radius: 20px;
+    width: 280px;
+    height: 50px;
+    box-shadow: 1px 9px 15px 0 rgba(0, 0, 0, 0.2);
+    background: #fcfcfc;
+  
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #623f8b;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .modalButtonColor {
+      width: 300px;
+    }
+  
+    .modalButton {
+      width: 300px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .modalButtonColor {
+      width: 300px;
+    }
+
+    .modalButton {
+      width: 300px;
+    }
+  }
+  
+  .mainContainer {
+    display: flex;
+    margin-top: 60px;
+    flex-direction: column;
+  
+    @media screen and (max-width: 767px) {
+      align-items: center;
+    }
+    @media screen and (min-width: 768px) {
+      flex-direction: column;
+      gap: 20px;
+      padding-bottom: 32px;
+      padding: 0 32px 40px;
+      margin-top: 0;
+    }
+    @media screen and (min-width: 1280px) {
+      flex-direction: row;
+      gap: 69px;
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  .commonInfo {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 0;
+    @media screen and (min-width: 768px) {
+      display: flex;
+      gap: 32px;
+      margin-top: 80px;
+      height: 214px;
+    }
+  
+    @media screen and (min-width: 1280px) {
+      flex-direction: column;
+      width: 480px;
+      margin-left: 0;
+      margin-right: 0;
+      height: 100%;
+      gap: 32px;
+    }
+  }
+  
+  @media screen and (min-width: 1280px) {
+    .commonInfo::after {
+      display: block;
+      position: absolute;
+      right: 0px;
+      top: 0;
+      content: '';
+      width: 1px;
+      height: 100%;
+      border-radius: 2px;
+      background: rgba(255, 255, 255, 0.6);
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .wrap {
+      padding: 40px 0 0;
+    }
+  }
+  
+  .backgroundContainer_home {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+  }
+  .backgroundContainer_statistic {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    position: fixed;
+  }
+  
+  .backgroundContainer_home div:nth-child(1) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 454px;
+    height: 454px;
+    background: radial-gradient(
+      circle at center,
+      rgba(47, 21, 176, 1),
+      rgba(47, 21, 176, 0.73)
+    );
+    opacity: 0.73;
+    border-radius: 50%;
+  }
+  
+  .backgroundContainer_home {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+  }
+  
+  .backgroundContainer_statistic {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    position: fixed;
+  }
+  
+  .backgroundContainer_home div:nth-child(1) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 454px;
+    height: 454px;
+    background: radial-gradient(
+      circle at center,
+      rgba(47, 21, 176, 1),
+      rgba(47, 21, 176, 0.73)
+    );
+    opacity: 0.73;
+    border-radius: 50%;
+  }
+  
+  .backgroundContainer_home div:nth-child(2) {
+    position: absolute;
+    width: 134px;
+    height: 134px;
+    background: rgba(109, 28, 119, 1);
+    border-radius: 50%;
+    bottom: -36px;
+    right: 52px;
+  }
+  
+  .backgroundContainer_home div:nth-child(3) {
+    position: absolute;
+    width: 173px;
+    height: 173px;
+    border-radius: 50%;
+    background: rgba(48, 46, 142, 1);
+    bottom: 153px;
+    right: -137px;
+  }
+  
+  .backgroundContainer_home div:nth-child(4) {
+    position: absolute;
+    width: 173px;
+    height: 173px;
+    border-radius: 50%;
+    opacity: 0.68;
+    background: linear-gradient(
+      to top right,
+      rgba(142, 46, 121, 1),
+      rgba(171, 51, 173, 1)
+    );
+    top: -86px;
+    left: -123px;
+  }
+  
+  .backgroundContainer_home div:nth-child(5) {
+    position: absolute;
+    width: 434px;
+    height: 434px;
+    opacity: 0.73;
+    border-radius: 50%;
+    background: linear-gradient(
+      to top right,
+      rgba(101, 35, 146, 1),
+      rgba(109, 84, 235, 1)
+    );
+    top: -150px;
+    left: -281px;
+  }
+  
+  .backgroundContainer_home div:nth-child(6) {
+    position: absolute;
+    width: 362px;
+    height: 362px;
+    border-radius: 50%;
+    background: linear-gradient(
+      to top right,
+      rgba(101, 35, 146, 1),
+      rgba(109, 84, 235, 1)
+    );
+    right: -185px;
+    bottom: -96px;
+  }
+  
+  .backgroundContainer_home::after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(300px);
+  }
+  
+  @media screen and (min-width: 768px) {
+    .backgroundContainer_home div:nth-child(1) {
+      position: absolute;
+      right: -127px;
+      top: -166px;
+      left: auto;
+      bottom: auto;
+      transform: none;
+      width: 549px;
+      height: 554px;
+      background: linear-gradient(
+        to top right,
+        rgba(52, 31, 160, 1) 20%,
+        rgba(101, 35, 146, 1)
+      );
+      opacity: 1;
+      border-radius: 50%;
+    }
+  
+    .backgroundContainer_home div:nth-child(2) {
+      position: absolute;
+      right: -306px;
+      top: 272px;
+      left: auto;
+      bottom: auto;
+      transform: none;
+      width: 363px;
+      height: 366px;
+      background: rgba(48, 46, 142, 1);
+      opacity: 1;
+      border-radius: 50%;
+    }
+  
+    .backgroundContainer_home div:nth-child(3) {
+      position: absolute;
+      right: auto;
+      top: auto;
+      left: -328px;
+      bottom: -410px;
+      transform: none;
+      width: 819px;
+      height: 825px;
+      background: linear-gradient(
+        to top right,
+        rgba(101, 35, 146, 1),
+        rgba(52, 31, 160, 1)
+      );
+      opacity: 0.8;
+      border-radius: 50%;
+    }
+  
+    .backgroundContainer_home div:nth-child(4) {
+      position: absolute;
+      right: auto;
+      top: 34px;
+      left: -503px;
+      bottom: auto;
+      transform: none;
+      width: 739px;
+      height: 745px;
+      background: linear-gradient(
+        to top right,
+        rgba(101, 35, 146, 1),
+        rgba(109, 84, 235, 1)
+      );
+      opacity: 0.6;
+      border-radius: 50%;
+    }
+  
+    .backgroundContainer_home div:nth-child(5) {
+      position: absolute;
+      right: 39px;
+      top: auto;
+      left: auto;
+      bottom: -204px;
+      transform: none;
+      width: 330px;
+      height: 333px;
+      background: rgba(109, 28, 119, 1);
+      opacity: 0.8;
+      border-radius: 50%;
+    }
+  
+    .backgroundContainer_home div:nth-child(6) {
+      position: absolute;
+      right: -455px;
+      top: auto;
+      left: auto;
+      bottom: -407px;
+      transform: none;
+      width: 893px;
+      height: 901px;
+      background: linear-gradient(
+        to top right,
+        rgba(101, 35, 146, 1),
+        rgba(109, 84, 235, 1)
+      );
+      opacity: 0.8;
+      border-radius: 50%;
+    }
+  
+    .backgroundContainer_home::after {
+      position: absolute;
+      content: '';
+      height: 100%;
+      width: 100%;
+      backdrop-filter: blur(235px);
+    }
+  }
+  
+  @media screen and (min-width: 1280px) {
+    .backgroundContainer_home div:nth-child(1) {
+      position: absolute;
+      right: auto;
+      top: auto;
+      left: -196px;
+      bottom: -314px;
+      transform: none;
+      width: 760px;
+      height: 766px;
+      background: linear-gradient(
+        to bottom left,
+        rgba(52, 31, 160, 1) 45%,
+        rgba(101, 35, 146, 1) 89%
+      );
+      opacity: 1;
+      border-radius: 50%;
+    }
+  
+    .backgroundContainer_home div:nth-child(2) {
+      position: absolute;
+      right: -212px;
+      top: 152px;
+      left: auto;
+      bottom: auto;
+      transform: none;
+      width: 363px;
+      height: 366px;
+      background: rgba(48, 46, 142, 1);
+      opacity: 1;
+      border-radius: 50%;
+    }
+  
+    .backgroundContainer_home div:nth-child(3) {
+      position: absolute;
+      right: auto;
+      top: -164px;
+      left: -223px;
+      bottom: auto;
+      transform: none;
+      width: 760px;
+      height: 766px;
+      background: linear-gradient(
+        to top right,
+        rgba(109, 84, 235, 1) 3%,
+        rgba(101, 35, 146, 1) 89%
+      );
+      opacity: 0.6;
+      border-radius: 50%;
+    }
+  
+    .backgroundContainer_home div:nth-child(4) {
+      position: absolute;
+      right: 271px;
+      top: auto;
+      left: auto;
+      bottom: -309px;
+      transform: none;
+      width: 330px;
+      height: 333px;
+      background: rgba(109, 28, 119, 1);
+      opacity: 0.8;
+      border-radius: 50%;
+    }
+  
+    .backgroundContainer_home div:nth-child(5) {
+      position: absolute;
+      right: -311px;
+      top: auto;
+      left: auto;
+      bottom: -457px;
+      transform: none;
+      width: 893px;
+      height: 901px;
+      background: linear-gradient(
+        to top right,
+        rgba(109, 84, 235, 1),
+        rgba(101, 35, 146, 1)
+      );
+      opacity: 0.6;
+      border-radius: 50%;
+    }
+  
+    .backgroundContainer_home::after {
+      position: absolute;
+      content: '';
+      height: 100%;
+      width: 100%;
+      backdrop-filter: blur(650px);
+    }
+  }
+  
