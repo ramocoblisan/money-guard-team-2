@@ -1,0 +1,938 @@
+.login_register_section,
+.register_login_section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-blend-mode: exclusion;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.svg_name{
+    width:20px;
+    height:20px;
+}
+.svg_logo{
+    width:25.5px;
+    height:25.5px;
+}
+.svg_icon_logo{
+    width:36px;
+    height:36px;
+}
+.background_container_login,
+.background_container_registration {
+  position: absolute;
+  background: #101010;
+  width: 100%;
+  height: 100%;
+}
+.background_container_login div:nth-child(1),
+.background_container_registration div:nth-child(1) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 454px;
+  height: 454px;
+  background: radial-gradient(
+    circle at center,
+    rgba(47, 21, 176, 0.73),
+    #101010
+  );
+  border-radius: 50%;
+}
+.background_container_login div:nth-child(2) {
+  position: absolute;
+  width: 362px;
+  height: 362px;
+  background: linear-gradient(
+    to top right,
+    rgba(101, 35, 146, 1),
+    rgba(109, 84, 235, 1)
+  );
+  border-radius: 50%;
+  bottom: -96px;
+  right: -185px;
+}
+.background_container_registration div:nth-child(2) {
+  position: absolute;
+  width: 134px;
+  height: 134px;
+  background: rgba(109, 28, 119, 1);
+  border-radius: 50%;
+  bottom: -36px;
+  right: 52px;
+}
+.background_container_login div:nth-child(3) {
+  position: absolute;
+  width: 434px;
+  height: 434px;
+  opacity: 0.73;
+  border-radius: 50%;
+  background: linear-gradient(
+    to top right,
+    rgba(101, 35, 146, 1),
+    rgba(109, 84, 235, 1)
+  );
+  top: -150px;
+  left: -281px;
+}
+.background_container_registration div:nth-child(3) {
+  position: absolute;
+  width: 173px;
+  height: 173px;
+  border-radius: 50%;
+  background: rgba(48, 46, 142, 1);
+  bottom: 153px;
+  right: -137px;
+}
+.background_container_login div:nth-child(4) {
+  position: absolute;
+  width: 173px;
+  height: 173px;
+  border-radius: 50%;
+  opacity: 0.68;
+  background: linear-gradient(
+    to top right,
+    rgba(142, 46, 121, 1),
+    rgba(171, 51, 173, 1)
+  );
+  top: -86px;
+  left: -123px;
+}
+.background_container_registration div:nth-child(4) {
+  position: absolute;
+  width: 173px;
+  height: 173px;
+  border-radius: 50%;
+  opacity: 0.68;
+  background: linear-gradient(
+    to top right,
+    rgba(142, 46, 121, 1),
+    rgba(171, 51, 173, 1)
+  );
+  top: -86px;
+  left: -123px;
+}
+.background_container_login div:nth-child(5) {
+  position: absolute;
+  width: 173px;
+  height: 173px;
+  border-radius: 50%;
+  background: rgba(48, 46, 142, 1);
+  right: -137px;
+  bottom: 153px;
+}
+.background_container_registration div:nth-child(5) {
+  position: absolute;
+  width: 434px;
+  height: 434px;
+  border-radius: 50%;
+  opacity: 0.73;
+  background: linear-gradient(
+    to top right,
+    rgba(101, 35, 146, 1),
+    rgba(109, 84, 235, 1)
+  );
+  left: -281px;
+  top: -150px;
+}
+.background_container_login div:nth-child(6) {
+  position: absolute;
+  width: 134px;
+  height: 134px;
+  border-radius: 50%;
+  background: rgba(109, 28, 119, 1);
+  right: 52px;
+  bottom: -36px;
+}
+.background_container_registration div:nth-child(6) {
+  position: absolute;
+  width: 362px;
+  height: 362px;
+  border-radius: 50%;
+  background: linear-gradient(
+    to top right,
+    rgba(101, 35, 146, 1),
+    rgba(109, 84, 235, 1)
+  );
+  right: -185px;
+  bottom: -96px;
+}
+.background_container_login::after,
+.background_container_registration::after {
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(100px);
+}
+
+.gradient_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.form_container_login,
+.form_container_register {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 23px 20px;
+  gap: 39.68px;
+  position: absolute;
+}
+.login_register_section {
+  box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
+}
+.gradient_container {
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  background: radial-gradient(
+      circle at center,
+      rgba(47, 21, 176, 0.73),
+      #101010
+    ),
+    radial-gradient(362px at bottom right, #652392, transparent),
+    radial-gradient(173px at top 0px left -45px, #8e2e79, transparent),
+    radial-gradient(134px at bottom 20px right 100px, #8e2e79, transparent),
+    radial-gradient(173px at bottom 153px right -20px, #302e8e, transparent),
+    radial-gradient(434px at top left, #652392, transparent);
+  background-blend-mode: exclusion;
+  opacity: 0.8;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+}
+.submit_btn {
+  width: 280px;
+  height: 50px;
+  border-radius: 20px;
+  box-shadow: 1px 9px 15px 0px rgba(0, 0, 0, 0.2);
+  border: none;
+  background: linear-gradient(
+    166.82deg,
+    rgb(255, 199, 39) -18.556%,
+    rgb(158, 64, 186) 98.694%,
+    rgb(112, 0, 255) 154.166%
+  );
+  color: rgb(251, 251, 251);
+  font-size: 18px;
+  font-weight: var(--font-weight-regular);
+  line-height: 27px;
+  letter-spacing: 10%;
+  text-align: center;
+  text-transform: uppercase;
+}
+.inactive_btn {
+  border-radius: 20px;
+  box-shadow: 1px 9px 15px 0px rgba(0, 0, 0, 0.2);
+  background-color: rgb(252, 252, 252);
+  width: 280px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: var(--font-weight-regular);
+  line-height: 27px;
+  letter-spacing: 10%;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(98, 63, 139);
+}
+.password_label {
+  display: flex;
+  width: 280px;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 8px;
+  position: relative;
+}
+.password_input {
+  width: 280px;
+  border: none;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  outline: none;
+}
+.error_container {
+  position: relative;
+  width: 100%;
+}
+.username {
+  color: red;
+  font-size: 10px;
+  font-weight: 200;
+  position: absolute;
+}
+.email {
+  color: red;
+  font-size: 10px;
+  font-weight: 200;
+  position: absolute;
+}
+.password {
+  color: red;
+  font-size: 10px;
+  font-weight: 200;
+  position: absolute;
+}
+.cpassword {
+  color: red;
+  font-size: 10px;
+  font-weight: 200;
+  position: absolute;
+}
+
+.password_input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.eye {
+  border: none;
+  background-color: transparent;
+}
+.name_label {
+  width: 280px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 8px;
+}
+.name_input {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  outline: none;
+  position: relative;
+}
+.name_input:-webkit-autofill,
+.name_input:-webkit-autofill:hover,
+.name_input:-webkit-autofill:focus,
+.name_input:-webkit-autofill:active {
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.6);
+  transition: background-color 5000s;
+  background-color: transparent !important;
+}
+.name_input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+.name_user_icon {
+  display: flex;
+  fill: rgba(255, 255, 255, 0.4);
+}
+.icon_email_cont {
+  display: flex;
+  fill: rgba(255, 255, 255, 0.4);
+}
+.password_icon {
+  display: flex;
+  fill: rgba(255, 255, 255, 0.4);
+}
+.button_cont {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+.progress_bar {
+  margin-top: 8px;
+  div {
+    height: 4px;
+    :first-child {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    :last-child {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    :nth-child(even) {
+      width: 0 !important;
+    }
+  }
+  p {
+    display: none;
+  }
+}
+.progress_container {
+  width: 280px;
+  position: absolute;
+  bottom: 145px;
+}
+.logo_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 29px;
+  font-size: 19px;
+  font-weight: var(--font-weight-regular);
+  color: rgb(251, 251, 251);
+  font-size: 19.11px;
+  font-weight: 400;
+  line-height: 29px;
+  text-align: left;
+}
+@media screen and (min-width: 768px) {
+  .login_register_section {
+    background-position: top left, bottom right;
+    height: 100vh;
+    background-color: #101010;
+    background-blend-mode: exclusion;
+    z-index: 1;
+    position: relative;
+  }
+  .register_login_section {
+    background-size: cover;
+    background-blend-mode: exclusion;
+    z-index: 1;
+    position: relative;
+  }
+  .form_container_login,
+  .form_container_register {
+    z-index: 3;
+  }
+
+  .background_container_login div:nth-child(1) {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background: rgba(109, 28, 119, 1);
+    border-radius: 50%;
+    bottom: -45px;
+    right: 232px;
+    left: auto;
+    top: auto;
+    opacity: 1;
+    transform: none;
+  }
+  .background_container_registration div:nth-child(1) {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background: rgba(48, 46, 142, 1);
+    border-radius: 50%;
+    bottom: 736px;
+    left: -400px;
+    right: auto;
+    top: auto;
+    opacity: 1;
+    transform: none;
+  }
+  .background_container_login div:nth-child(2) {
+    position: absolute;
+    width: 284px;
+    height: 284px;
+    background: rgba(48, 46, 142, 1);
+    border-radius: 50%;
+    right: -78px;
+    bottom: 266px;
+    top: auto;
+    left: auto;
+    opacity: 1;
+  }
+  .background_container_registration div:nth-child(2) {
+    position: absolute;
+    width: 284px;
+    height: 284px;
+    background: linear-gradient(
+      to top left,
+      rgba(142, 46, 121, 1),
+      rgba(171, 51, 173, 1)
+    );
+    border-radius: 50%;
+    left: -372px;
+    bottom: 220px;
+    top: auto;
+    right: auto;
+    opacity: 1;
+  }
+  .background_container_login div:nth-child(3) {
+    position: absolute;
+    width: 284px;
+    height: 284px;
+    opacity: 0.68;
+    border-radius: 50%;
+    background: linear-gradient(
+      to top right,
+      rgba(142, 46, 121, 1),
+      rgba(171, 51, 173, 1)
+    );
+    left: -270px;
+    top: 26px;
+    right: auto;
+    bottom: auto;
+  }
+  .background_container_registration div:nth-child(3) {
+    position: absolute;
+    width: 654px;
+    height: 654px;
+    opacity: 0.73;
+    border-radius: 50%;
+    background: linear-gradient(
+      to top left,
+      rgba(101, 45, 156, 1),
+      rgba(109, 84, 235, 1)
+    );
+    right: -369px;
+    top: -253px;
+    bottom: auto;
+    left: auto;
+  }
+  .background_container_login div:nth-child(4) {
+    position: absolute;
+    width: 713px;
+    height: 713px;
+    opacity: 0.73;
+    background: linear-gradient(
+      to top right,
+      rgba(101, 35, 146, 1),
+      rgba(109, 84, 235, 1)
+    );
+    border-radius: 50%;
+    left: -50%;
+    bottom: 481px;
+    right: auto;
+    top: auto;
+  }
+  .background_container_registration div:nth-child(4) {
+    position: absolute;
+    width: 454px;
+    height: 454px;
+    opacity: 0.73;
+    background: linear-gradient(
+      to bottom right,
+      rgba(47, 21, 176, 1),
+      rgba(47, 21, 176, 0.73)
+    );
+    border-radius: 50%;
+    left: -173px;
+    top: -166px;
+    right: auto;
+    bottom: auto;
+  }
+  .background_container_login div:nth-child(5) {
+    position: absolute;
+    width: 595px;
+    height: 595px;
+    border-radius: 50%;
+    background: linear-gradient(
+      to top right,
+      rgba(101, 35, 146, 1),
+      rgba(109, 84, 235, 1)
+    );
+    right: -156px;
+    bottom: -143px;
+    top: auto;
+    left: auto;
+    opacity: 1;
+  }
+  .background_container_registration div:nth-child(5) {
+    position: absolute;
+    width: 515px;
+    height: 515px;
+    border-radius: 50%;
+    background: rgba(109, 28, 119, 1);
+    right: -404px;
+    top: -120px;
+    bottom: auto;
+    left: auto;
+    opacity: 1;
+  }
+  .background_container_registration div:nth-child(6) {
+    position: absolute;
+    width: 707px;
+    height: 707px;
+    border-radius: 50%;
+    background: linear-gradient(
+      to top left,
+      rgba(101, 35, 146, 1),
+      rgba(109, 84, 235, 1)
+    );
+    left: -361px;
+    bottom: -49px;
+    right: auto;
+    top: auto;
+    opacity: 1;
+  }
+  .background_container_login::after,
+  .background_container_registration::after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(100px);
+    background-color: transparent;
+  }
+  .background_img_container_login,
+  .background_img_container_registration {
+    background: transparent;
+    width: 100%;
+    height: 100vh;
+  }
+  .background_img_container_login div:nth-child(1) {
+    position: absolute;
+    content: url('../../img/imgBcg/coins_tab_up.png');
+    width: 374px;
+    top: -204px;
+    z-index: 1;
+    opacity: 0.5;
+    left: auto;
+    right: auto;
+    bottom: auto;
+  }
+  .background_img_container_registration div:nth-child(1) {
+    position: absolute;
+    content: url('../../img/imgBcg/bucks_tabs_many.png');
+    z-index: 2;
+    width: 120%;
+    left: -157px;
+    right: -157px;
+    height: 130%;
+    opacity: 0.5;
+    top: auto;
+    bottom: auto;
+  }
+  .background_img_container_login div:nth-child(2) {
+    position: absolute;
+    content: url('../../img/imgBcg/coins_tab_down.png');
+    bottom: 0px;
+    right: 0px;
+    z-index: 2;
+    top: auto;
+    left: auto;
+  }
+  .background_img_container_registration div:nth-child(2) {
+    position: absolute;
+    content: url('../../img/imgBcg/bucks_tab_less.png');
+    top: -12px;
+    right: -234px;
+    z-index: 2;
+    opacity: 0.5;
+    height: 896px;
+    max-height: 90%;
+    bottom: auto;
+    left: auto;
+  }
+  .background_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+
+    background-blend-mode: exclusion;
+  }
+  .form_container_login {
+    box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.25);
+    position: absolute;
+    border-radius: 8px;
+    width: 533px;
+    height: 570px;
+    background: radial-gradient(
+      circle at center,
+      rgba(47, 21, 176, 0.73),
+      rgba(255, 255, 255, 0.1)
+    );
+    position: absolute;
+    backdrop-filter: blur(60px);
+    opacity: 0.99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .form_container_register {
+    box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.25);
+    position: absolute;
+    border-radius: 8px;
+    width: 533px;
+    height: 624px;
+    background: radial-gradient(
+      circle at center,
+      rgba(47, 21, 176, 0.73),
+      rgba(255, 255, 255, 0.1)
+    );
+    position: absolute;
+    backdrop-filter: blur(60px);
+    opacity: 0.99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .password_label {
+    width: 409px;
+    margin: 0 auto;
+    background-color: transparent;
+  }
+  .name_label {
+    width: 409px;
+    margin: 0 auto;
+    background-color: transparent;
+  }
+  .logo_wrapper {
+    font-size: 26px;
+  }
+  .submit_btn {
+    width: 300px;
+  }
+  .inactive_btn {
+    width: 300px;
+  }
+  .porgress_container {
+    width: 409px;
+    position: absolute;
+    bottom: 145px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .background_container_login div:nth-child(1) {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: rgba(109, 28, 119, 1);
+    bottom: -71px;
+    right: 307px;
+    opacity: 1;
+  }
+  .background_container_registration div:nth-child(1) {
+    position: absolute;
+    width: 369px;
+    height: 369px;
+    border-radius: 50%;
+    background: rgba(48, 46, 142, 1);
+    top: -68px;
+    left: -120px;
+    bottom: auto;
+    opacity: 1;
+  }
+  .background_container_login div:nth-child(2) {
+    position: absolute;
+    width: 284px;
+    height: 284px;
+    background: rgba(48, 46, 142, 1);
+    border-radius: 50%;
+    right: -3px;
+    bottom: 240px;
+    left: auto;
+    top: auto;
+    opacity: 1;
+  }
+  .background_container_registration div:nth-child(2) {
+    position: absolute;
+    width: 707px;
+    height: 707px;
+    border-radius: 50%;
+    background: linear-gradient(
+      to bottom right,
+      rgba(101, 35, 146, 1) 3%,
+      rgba(109, 84, 235, 1) 90%
+    );
+    left: -81px;
+    bottom: -366px;
+    right: auto;
+    top: auto;
+    opacity: 1;
+  }
+  .background_container_login div:nth-child(3) {
+    position: absolute;
+    width: 284px;
+    height: 284px;
+    background: linear-gradient(
+      to top right,
+      rgba(142, 46, 121, 1),
+      rgba(171, 51, 173, 1)
+    );
+    opacity: 0.68;
+    border-radius: 50%;
+    top: -58px;
+    left: -116px;
+    bottom: auto;
+    right: auto;
+  }
+  .background_container_registration div:nth-child(3) {
+    position: absolute;
+    width: 654px;
+    height: 654px;
+    background: linear-gradient(
+      to bottom right,
+      rgba(109, 84, 235, 1) 3%,
+      rgba(101, 35, 146, 1) 90%
+    );
+    opacity: 0.73;
+    border-radius: 50%;
+    top: -240px;
+    right: -137px;
+    bottom: auto;
+    left: auto;
+  }
+  .background_container_login div:nth-child(4) {
+    position: absolute;
+    width: 713px;
+    height: 713px;
+    background: linear-gradient(
+      to top right,
+      rgba(101, 35, 146, 1),
+      rgba(109, 84, 235, 1)
+    );
+    opacity: 0.73;
+    border-radius: 50%;
+    top: -254px;
+    left: -219px;
+    bottom: auto;
+    right: auto;
+  }
+  .background_container_registration div:nth-child(4) {
+    position: absolute;
+    width: 454px;
+    height: 454px;
+    background: linear-gradient(
+      to bottom right,
+      rgba(47, 21, 176, 1),
+      rgba(47, 21, 176, 0.73)
+    );
+    opacity: 0.73;
+    border-radius: 50%;
+    top: -153px;
+    left: 107px;
+    bottom: auto;
+    right: auto;
+  }
+  .background_container_login div:nth-child(5) {
+    position: absolute;
+    width: 595px;
+    height: 595px;
+    border-radius: 50%;
+    background: linear-gradient(
+      to top right,
+      rgba(101, 35, 146, 1),
+      rgba(109, 84, 235, 1)
+    );
+    right: -81px;
+    bottom: -169px;
+    left: auto;
+    top: auto;
+    opacity: 1;
+  }
+  .background_container_registration div:nth-child(5) {
+    position: absolute;
+    width: 515px;
+    height: 515px;
+    border-radius: 50%;
+    background: rgba(109, 28, 119, 1);
+    right: -172px;
+    top: -107px;
+    left: auto;
+    bottom: auto;
+    opacity: 1;
+  }
+  .background_container_registration div:nth-child(6) {
+    position: absolute;
+    width: 251px;
+    height: 251px;
+    background: linear-gradient(
+      to top left,
+      rgba(142, 46, 121, 1) 0%,
+      rgba(171, 51, 173, 1) 100%
+    );
+    border-radius: 50%;
+    left: -92px;
+    bottom: -97px;
+    top: auto;
+    right: auto;
+    opacity: 0.68;
+  }
+  .background_container_login::after,
+  .background_container_registration::after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(100px);
+  }
+  .background_img_container_login,
+  .background_img_container_registration {
+    position: absolute;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+  }
+  .background_img_container_login div:nth-child(1) {
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    opacity: 0.5;
+    content: url('../../img/imgBcg/coins_desc_left.png');
+    z-index: 1;
+    top: 0px;
+  }
+  .background_img_container_registration div:nth-child(1) {
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    opacity: 0.5;
+    content: url('../../img/imgBcg/bucks_desc_left.png');
+    background-size: cover;
+    z-index: 1;
+    left: 0px;
+    right: auto;
+    top: 0px;
+    bottom: 0px;
+  }
+  .background_img_container_login div:nth-child(2) {
+    position: absolute;
+    opacity: 0.5;
+    content: url('../../img/imgBcg/coins_desc_right.png');
+    right: 0px;
+    bottom: 0px;
+    top: auto;
+    left: auto;
+    z-index: 1;
+    height: 100%;
+  }
+  .background_img_container_registration div:nth-child(2) {
+    position: absolute;
+    opacity: 0.5;
+    width: 40%;
+    content: url('../../img/imgBcg/bucks_desc_right.png');
+    z-index: 1;
+    right: 0px;
+    bottom: 0px;
+    height: 100%;
+    left: auto;
+    top: 0px;
+  }
+}
