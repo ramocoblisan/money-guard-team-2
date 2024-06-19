@@ -120,11 +120,11 @@ img {
 
   @media screen and (min-width: 1024px) {
     .modalButtonColor {
-      width: 320px;
+      width: 300px;
     }
 
     .modalButton {
-      width: 320px;
+      width: 300px;
     }
   }
   
