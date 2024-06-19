@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const walletApi = axios.create({
-  baseURL: 'https://wallet.b.goit.study/api/',
+  baseURL: 'https://wallet.b.goit.study/docs/',
 });
 
 export const setToken = token => {
