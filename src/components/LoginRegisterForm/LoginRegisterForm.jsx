@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
 import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup  from "yup";
 import { NavLink } from "react-router-dom";
 
-import style from "./LoginRegisterForm.module.css";
+import style from "./LoginRegisterForm.module.scss";
 import svg from "../../images/svg/sprite.svg";
 
 import InputField from "./InputField";
@@ -28,7 +28,7 @@ const LoginRegisterForm = ({ onDataSubmit, formType, schema }) => {
       reset,
       handleSubmit,
       formState: { errors },
-    } = useForm({ resolver: yupResolver(schema) });
+    } = useForm({ resolver: yup(schema) });
   
     const submit = dataS => {
       const { passwordConfirmation, ...data } = dataS;

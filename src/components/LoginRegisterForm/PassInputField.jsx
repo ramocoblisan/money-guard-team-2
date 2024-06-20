@@ -1,7 +1,7 @@
 import React, {useState}from'react';
 import LoginProgress from './LoginProgress';
 
-import style from './LoginRegisterForm.module.css';
+import style from './LoginRegisterForm.module.scss';
 import svg from '../../images/svg/sprite.svg';
 
 import { PiEyeClosed, PiEyeThin } from 'react-icons/pi';

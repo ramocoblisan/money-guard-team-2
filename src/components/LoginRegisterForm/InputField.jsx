@@ -1,6 +1,6 @@
 import React from "react";
 
-import style from "./LoginRegisterForm.module.css";
+import style from "./LoginRegisterForm.module.scss";
 import svg from "../../images/svg/sprite.svg"
 
 const InputField=({errors, name, className, register, placeholder})=>{
