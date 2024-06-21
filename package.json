@@ -20,6 +20,7 @@
   "dependencies": {
     "@hookform/resolvers": "^3.6.0",
     "@reduxjs/toolkit": "^2.2.5",
+    "@swc/helpers": "^0.5.11",
     "axios": "^1.7.2",
     "modern-normalize": "^1.1.0",
     "react": "^18.3.1",
@@ -31,16 +32,12 @@
     "yup": "^1.4.0"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.6.0",
+    "@parcel/transformer-sass": "^2.12.0",
     "buffer": "^6.0.3",
     "parcel": "^2.12.0",
     "parcel-reporter-clean-dist": "^1.0.4",
     "posthtml-include": "^1.7.4",
     "process": "^0.11.10"
   },
-  "browserslist": "> 0.5%, last 2 versions, not dead",
-  "main": "index.js",
-  "optionalDependencies": {
-    "@parcel/watcher-linux-x64-glibc": "^2.4.2-alpha.0"
-  }
+  "browserslist": "> 0.5%, last 2 versions, not dead"
 }

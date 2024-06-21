@@ -10,17 +10,17 @@
   align-items: center;
   height: 100vh;
 }
-.svg_name{
-    width:20px;
-    height:20px;
+.svg_name {
+  width: 20px;
+  height: 20px;
 }
-.svg_logo{
-    width:25.5px;
-    height:25.5px;
+.svg_logo {
+  width: 25.5px;
+  height: 25.5px;
 }
-.svg_icon_logo{
-    width:36px;
-    height:36px;
+.svg_icon_logo {
+  width: 36px;
+  height: 36px;
 }
 .background_container_login,
 .background_container_registration {
@@ -365,7 +365,7 @@
 }
 .progress_bar {
   margin-top: 8px;
-  div {
+  + div {
     height: 4px;
     :first-child {
       border-top-left-radius: 5px;
