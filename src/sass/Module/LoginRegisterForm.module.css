@@ -10,17 +10,17 @@
   align-items: center;
   height: 100vh;
 }
-.svg_name{
-    width:20px;
-    height:20px;
+.svg_name {
+  width: 20px;
+  height: 20px;
 }
-.svg_logo{
-    width:25.5px;
-    height:25.5px;
+.svg_logo {
+  width: 25.5px;
+  height: 25.5px;
 }
-.svg_icon_logo{
-    width:36px;
-    height:36px;
+.svg_icon_logo {
+  width: 36px;
+  height: 36px;
 }
 .background_container_login,
 .background_container_registration {
@@ -365,7 +365,7 @@
 }
 .progress_bar {
   margin-top: 8px;
-  div {
+  + div {
     height: 4px;
     :first-child {
       border-top-left-radius: 5px;
@@ -600,7 +600,7 @@
   }
   .background_img_container_login div:nth-child(1) {
     position: absolute;
-    content: url('../../img/imgBcg/coins_tab_up.png');
+    content: url('../../images/coins_tab_up.png');
     width: 374px;
     top: -204px;
     z-index: 1;
@@ -611,7 +611,7 @@
   }
   .background_img_container_registration div:nth-child(1) {
     position: absolute;
-    content: url('../../img/imgBcg/bucks_tabs_many.png');
+    content: url('../../images/bucks_tabs_many.png');
     z-index: 2;
     width: 120%;
     left: -157px;
@@ -623,7 +623,7 @@
   }
   .background_img_container_login div:nth-child(2) {
     position: absolute;
-    content: url('../../img/imgBcg/coins_tab_down.png');
+    content: url('../../images/coins_tab_down.png');
     bottom: 0px;
     right: 0px;
     z-index: 2;
@@ -632,7 +632,7 @@
   }
   .background_img_container_registration div:nth-child(2) {
     position: absolute;
-    content: url('../../img/imgBcg/bucks_tab_less.png');
+    content: url('../../images/bucks_tab_less.png');
     top: -12px;
     right: -234px;
     z-index: 2;
@@ -895,7 +895,7 @@
     width: 40%;
     height: 100%;
     opacity: 0.5;
-    content: url('../../img/imgBcg/coins_desc_left.png');
+    content: url('../../images/coins_desc_left.png');
     z-index: 1;
     top: 0px;
   }
@@ -904,7 +904,7 @@
     width: 40%;
     height: 100%;
     opacity: 0.5;
-    content: url('../../img/imgBcg/bucks_desc_left.png');
+    content: url('../../images/bucks_desc_left.png');
     background-size: cover;
     z-index: 1;
     left: 0px;
@@ -915,7 +915,7 @@
   .background_img_container_login div:nth-child(2) {
     position: absolute;
     opacity: 0.5;
-    content: url('../../img/imgBcg/coins_desc_right.png');
+    content: url('../../images/coins_desc_right.png');
     right: 0px;
     bottom: 0px;
     top: auto;
@@ -927,7 +927,7 @@
     position: absolute;
     opacity: 0.5;
     width: 40%;
-    content: url('../../img/imgBcg/bucks_desc_right.png');
+    content: url('../../images/bucks_desc_right.png');
     z-index: 1;
     right: 0px;
     bottom: 0px;

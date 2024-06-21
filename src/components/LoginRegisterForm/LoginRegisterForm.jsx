@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { NavLink } from "react-router-dom";
 
-import style from "./LoginRegisterForm.module.css";
+import style from "../../sass/Module/LoginRegisterForm.module.css";
 import svg from "../../images/svg/sprite.svg";
 
 import InputField from "./InputField";

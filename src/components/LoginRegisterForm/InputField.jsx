@@ -1,6 +1,6 @@
 import React from "react";
 
-import style from "./LoginRegisterForm.module.css";
+import style from "../../sass/Module/LoginRegisterForm.module.css";
 import svg from "../../images/svg/sprite.svg"
 
 const InputField=({errors, name, className, register, placeholder})=>{
@@ -14,7 +14,7 @@ const InputField=({errors, name, className, register, placeholder})=>{
                     <use xlinkHref={`${svg}#icon-user`}></use>
                     </svg>
                 </div>):
-                (<div className={s.icon_email_cont}>
+                (<div className={style.icon_email_cont}>
                     <svg className={style.svg_name}>
                       <use xlinkHref={`${svg}#icon-email`}></use>
                     </svg>
