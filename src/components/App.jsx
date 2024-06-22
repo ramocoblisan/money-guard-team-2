@@ -1,6 +1,6 @@
-import React, { Suspense } from'react';
-import {Navigate, Route, Routes} from "react-router-dom";
-import { RestrictedRoute} from '../authRoutes/RestrictedRoute';
+import React, { Suspense } from 'react';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { RestrictedRoute } from '../authRoutes/RestrictedRoute';
 
 import Loader from '../components/Loader';
 import Register from '../partials/Pages/RegisterPage';
@@ -10,9 +10,7 @@ import DashboardPage from '../partials/Pages/DashboardPage';
 import HomePage from '../partials/Pages/HomePage';
 import StatisticsPage from '../partials/Pages/StatisticsPage';
 
-
 function App() {
-
   return (
     <>
       <Suspense fallback={<Loader />}>
@@ -20,12 +18,22 @@ function App() {
           <Route path="/" element={<Navigate to="/register" replace />} />
           <Route path="home" element={<BackupHome />} />
           <Route
-            path="register"
-            element={<RestrictedRoute component={Register} redirectTo="/dashboard/home" />}
+            path="/register"
+            element={
+              <RestrictedRoute
+                component={Register}
+                redirectTo="/dashboard/home"
+              />
+            }
           />
           <Route
-            path="login"
-            element={<RestrictedRoute component={LoginPage} redirectTo="/dashboard/home" />}
+            path="/login"
+            element={
+              <RestrictedRoute
+                component={LoginPage}
+                redirectTo="/dashboard/home"
+              />
+            }
           />
           {/* <Route
             path="dashboard"
