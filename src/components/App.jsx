@@ -10,7 +10,7 @@ import LoginPage from '../partials/Pages/LoginPage';
 function App() {
   return (
     <>
-      <Suspense fallback={<Loader />}>
+      {/* <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Navigate to="/register" replace />} />
           <Route path="home" element={<BackupHome />} />
@@ -32,16 +32,17 @@ function App() {
               />
             }
           />
-          {/* <Route
+          <Route
             path="dashboard"
             element={<RestrictedRoute component={DashboardPage} redirectTo="/login" />}
           >
             <Route path="/" element={<Navigate to="home" replace />} />
             <Route path="home" element={<HomePage />} />
-            <Route path="statistics" element={<StatisticsPage />} /> */}
-          {/* </Route> */}
+            <Route path="statistics" element={<StatisticsPage />} />
+          </Route>
         </Routes>
-      </Suspense>
+      </Suspense> */}
+      Loading ....
     </>
   );
 }
