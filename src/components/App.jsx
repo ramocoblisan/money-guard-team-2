@@ -6,9 +6,6 @@ import Loader from '../components/Loader';
 import Register from '../partials/Pages/RegisterPage';
 import BackupHome from '../partials/Pages/BackupHome';
 import LoginPage from '../partials/Pages/LoginPage';
-import DashboardPage from '../partials/Pages/DashboardPage';
-import HomePage from '../partials/Pages/HomePage';
-import StatisticsPage from '../partials/Pages/StatisticsPage';
 
 function App() {
   return (
