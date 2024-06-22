@@ -10,18 +10,14 @@ import LoginPage from '../partials/Pages/LoginPage';
 function App() {
   return (
     <>
-      <Suspense fallback={<Loader />}>
-        <Routes>
-          <Route path="/" element={<BackupHome />} />
-          <Route path="home" element={<BackupHome />} />
-          <Route
-            path="/register"
-            element={
-              <RestrictedRoute component={Register} redirectTo="/home" />
-            }
-          />
-        </Routes>
-      </Suspense>
+      <Routes>
+        <Route path="/" element={<BackupHome />} />
+        <Route path="home" element={<BackupHome />} />
+        <Route
+          path="/register"
+          element={<RestrictedRoute component={Register} redirectTo="/home" />}
+        />
+      </Routes>
       Loading ....
     </>
   );
