@@ -12,15 +12,12 @@ function App() {
     <>
       <Suspense fallback={<Loader />}>
         <Routes>
-          <Route path="/" element={<Navigate to="/register" replace />} />
+          <Route path="/" element={<BackupHome />} />
           <Route path="home" element={<BackupHome />} />
           <Route
-            path="register"
+            path="/register"
             element={
-              <RestrictedRoute
-                component={Register}
-                redirectTo="/dashboard/home"
-              />
+              <RestrictedRoute component={Register} redirectTo="/home" />
             }
           />
         </Routes>
