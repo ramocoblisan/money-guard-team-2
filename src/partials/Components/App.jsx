@@ -6,7 +6,7 @@ import Register from '../Pages/RegisterPage';
 
 function App() {
   return (
-    <BrowserRouter basename="/">
+    <BrowserRouter basename="/money-guard-team-2">
       <Routes>
         <Route path="/" element={<BackupHome />} />
         <Route path="home" element={<BackupHome />} />
