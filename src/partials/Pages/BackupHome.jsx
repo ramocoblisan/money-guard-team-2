@@ -5,7 +5,7 @@ function HomePage() {
   const navigate = useNavigate();
   return (
     <div>
-      <button onClick={() => navigate('/register')}></button>
+      <button onClick={() => navigate('/register')}>Register</button>
       <h1>Home Page</h1>
       <p>Welcome to the Home Page!</p>
     </div>
