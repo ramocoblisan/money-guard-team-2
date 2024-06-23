@@ -7,7 +7,7 @@ import LoginRegisterForm from '../../components/LoginRegisterForm/LoginRegisterF
 import { registerThunk } from '../../redux/auth/operations';
 import { registerSchema } from '../../Schema/registerShema';
 
-import style from '../../sass/Module/RegisterPage.module.css';
+import * as style from '../../sass/Module/RegisterPage.module.css';
 
 const Register = () => {
   const dispatch = useDispatch();
