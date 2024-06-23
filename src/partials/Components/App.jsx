@@ -11,7 +11,10 @@ function App() {
       <Routes>
         <Route path="/" element={<BackupHome />} />
         <Route path="/home" element={<BackupHome />} />
-        <Route path="/register" element={<Register />} />
+        <Route
+          path="/register"
+          element={<RestrictedRoute component={Register} redirectTo="/home" />}
+        />
       </Routes>
     </HashRouter>
   );
