@@ -2,10 +2,10 @@
   "name": "money-guard-team-2",
   "version": "2.0.0",
   "description": "Цей проект створено за допомогою Parcel. Для ознайомлення та налаштування \r додаткових можливостей, [зверніться до документації](https://parceljs.org/).",
-  "homepage": "https://ramocoblisan.github.io/money-guard-team-2",
+  "homepage": "https://ramocoblisan.github.io/money-guard-team-2/",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/index.html --public-url /money-guard-team-2/"
+    "build": "parcel build src/index.html --public-url ./money-guard-team-2/"
   },
   "repository": {
     "type": "git",
