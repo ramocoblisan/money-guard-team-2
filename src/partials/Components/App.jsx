@@ -7,7 +7,7 @@ import Register from '../Pages/RegisterPage';
 
 function App() {
   return (
-    <HashRouter basename="/money-guard-team-2">
+    <HashRouter>
       <Routes>
         <Route path="/" element={<BackupHome />} />
         <Route path="home" element={<BackupHome />} />
