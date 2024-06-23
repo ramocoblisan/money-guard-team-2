@@ -1,13 +1,12 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import LoginRegisterForm from '../../components/LoginRegisterForm/LoginRegisterForm';
+import LoginRegisterForm from '../Components/LoginRegisterForm/LoginRegisterForm';
 
 import { registerThunk } from '../../redux/auth/operations';
 import { registerSchema } from '../../Schema/registerShema';
 
-import * as style from '../../sass/Module/RegisterPage.module.css';
+import * as style from '../../sass/Module/RegisterPage.module.scss';
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -19,7 +18,7 @@ const Register = () => {
   return (
     <>
       <LoginRegisterForm
-       className={style.registerWrapper}
+        className={style?.registerWrapper}
         onDataSubmit={handleSubmit}
         formType={'register'}
         schema={registerSchema}
