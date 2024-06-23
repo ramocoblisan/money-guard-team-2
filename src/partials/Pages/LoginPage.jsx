@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import LoginRegisterForm from '../../components/LoginRegisterForm/LoginRegisterForm';
+import LoginRegisterForm from '../Components/LoginRegisterForm/LoginRegisterForm';
 
 import { loginThunk } from '../../redux/auth/operations';
 import { loginSchema } from '../../Schema/loginSchema';

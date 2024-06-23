@@ -4,6 +4,9 @@ import { RestrictedRoute } from '../../authRoutes/RestrictedRoute';
 
 import BackupHome from '../Pages/BackupHome';
 import Register from '../Pages/RegisterPage';
+import Login from '../Pages/LoginPage';
+
+
 
 function App() {
   return (
@@ -15,6 +18,7 @@ function App() {
           path="/register"
           element={<RestrictedRoute component={<Register />} redirectTo="/" />}
         />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );
