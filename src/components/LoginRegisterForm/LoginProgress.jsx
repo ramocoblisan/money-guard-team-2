@@ -1,5 +1,5 @@
 import React from'react';
-import style from "../../sass/Module/LoginRegisterForm.module.css";
+import * as style from "../../sass/Module/LoginRegisterForm.module.css";
 
 const LoginProgress = ({password}) => {
   return (
