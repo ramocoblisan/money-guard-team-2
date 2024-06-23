@@ -9,8 +9,6 @@ const rootElement = document.getElementById('root');
 
 const root = createRoot(rootElement);
 
-const basename = '/';
-
 root.render(
   <React.StrictMode>
     <Provider store={store}>
