@@ -9,14 +9,15 @@ function App() {
   return (
     <>
       Loading ....
-      <Routes>
+      <Register />
+      {/* <Routes>
         <Route path="/" element={<BackupHome />} />
         <Route path="home" element={<BackupHome />} />
         <Route
           path="/register"
           element={<RestrictedRoute redirectTo="/" component={<Register />} />}
         />
-      </Routes>
+      </Routes> */}
     </>
   );
 }
