@@ -2,8 +2,8 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { RestrictedRoute } from '../../authRoutes/RestrictedRoute';
 
-import Register from '../pages/RegisterPage';
-import BackupHome from '../pages/BackupHome';
+import BackupHome from '../Pages/BackupHome';
+import Register from '../Pages/RegisterPage';
 
 function App() {
   return (
