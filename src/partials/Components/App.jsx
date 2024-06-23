@@ -13,7 +13,7 @@ function App() {
         <Route path="/home" element={<BackupHome />} />
         <Route
           path="/register"
-          element={<RestrictedRoute component={Register} redirectTo="/home" />}
+          element={<RestrictedRoute component={<Register />} redirectTo="/" />}
         />
       </Routes>
     </BrowserRouter>
