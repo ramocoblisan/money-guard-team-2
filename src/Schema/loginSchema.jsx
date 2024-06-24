@@ -1,12 +1,6 @@
 import * as yup from 'yup';
 
-export const loginSchema = yup
-  .object({
-    password: yup
-      .string()
-      .required()
-      .min(6, 'Must be more then 6 symbols')
-      .max(12, 'Must be less then 12 symbols'),
-    email: yup.string().required().email('Email is not valid'),
-  })
-  .required();
+export const loginSchema = yup.object().shape({
+  email: yup.string().email('Invalid email format').required('Email is required'),
+  password: yup.string().required('Password is required'),
+});

@@ -1,16 +1,20 @@
 import * as yup from 'yup';
 
-export const registerSchema = yup
-  .object({
-    username: yup.string().required(),
-    password: yup
-      .string()
-      .required()
-      .min(6, 'Must be more then 6 symbols')
-      .max(12, 'Must be less then 12 symbols'),
-    email: yup.string().required().email('Email is not valid'),
-    passwordConfirmation: yup
-      .string()
-      .oneOf([yup.ref('password'), null], 'Passwords must match'),
-  })
-  .required();
+export const registerSchema = yup.object().shape({
+  username: yup.string().required('Name is required'),
+  email: yup.string().email('Invalid email format').required('Email is required'),
+  password: yup.string().required('Password is required'),
+  passwordConfirmation: yup
+    .string()
+    .oneOf([yup.ref('password'), null], 'Passwords must match')
+    .required('Confirm password is required'),
+});
+
+const validateRegistrationData = async (data) => {
+  try {
+    await registerSchema.validate(data, { abortEarly: false });
+    return null; // No errors
+  } catch (validationErrors) {
+    return validationErrors.inner.map(error => error.message);
+  }
+};
