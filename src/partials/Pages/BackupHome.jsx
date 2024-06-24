@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function HomePage() {
+function BackupHome () {
   const navigate = useNavigate();
   return (
     <div>
@@ -13,4 +13,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default BackupHome;

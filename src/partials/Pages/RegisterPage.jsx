@@ -1,29 +1,39 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import LoginRegisterForm from '../Components/LoginRegisterForm/LoginRegisterForm';
-
 import { registerThunk } from '../../redux/auth/operations';
 import { registerSchema } from '../../Schema/registerShema';
-
 import * as style from '../../sass/Module/RegisterPage.module.scss';
+import { selectIsLoggedIn } from '../../redux/auth/authSlice';
 
 const Register = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
-  const handleSubmit = data => {
-    dispatch(registerThunk(data));
+  // console.log('RegisterPage - isLoggedIn:', isLoggedIn); // Adăugați acest log
+
+
+  const handleRegister = async (data) => {
+    await dispatch(registerThunk(data));
+    
   };
 
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate('/dashboard'); // Redirecționează către Dashboard dacă utilizatorul este autentificat
+    }
+  }, [isLoggedIn, navigate]);
+
   return (
-    <>
+    <div className={style?.registerWrapper}>
       <LoginRegisterForm
-        className={style?.registerWrapper}
-        onDataSubmit={handleSubmit}
-        formType={'register'}
+        onDataSubmit={handleRegister}
+        formType="register"
         schema={registerSchema}
       />
-    </>
+    </div>
   );
 };
 
