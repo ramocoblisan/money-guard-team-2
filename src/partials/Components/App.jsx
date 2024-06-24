@@ -22,7 +22,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route 
-          path="/dashboard" 
+          path="/dashboard/*" 
           element={<RestrictedRoute component={Dashboard} redirectTo="/login" />}
         />
       </Routes>
