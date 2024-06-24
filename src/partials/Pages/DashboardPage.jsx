@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import Header from '../components/Header';
+import Header from '../Components/Header';
 import Home from './HomePage';
 import Statistics from './StatisticsPage';
-import Balance from '../components/Balance';
-import Currency from '../components/Currency';
+import Balance from '../Components/Balance';
+import Currency from '../Components/Currency';
 import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
