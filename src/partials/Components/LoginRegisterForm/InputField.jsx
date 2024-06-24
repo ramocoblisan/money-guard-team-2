@@ -24,7 +24,9 @@ const InputField = ({ errors, name, className, register, placeholder }) => {
           <input
             className={style.name_input}
             type="text"
-            {...register(name)}
+            {...register(name, {
+              required: `${name.charAt(0).toUpperCase() + name.slice(1)} is required`,
+            })}
             placeholder={placeholder}
             autoComplete="none"
           />
