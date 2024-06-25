@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import TransactionTable from '../Components/TransactionTable';
+import Balance from '../Components/Balance';
 
 
 import { fetchTransactionsDataThunk } from '../../redux/transactions/operations';
