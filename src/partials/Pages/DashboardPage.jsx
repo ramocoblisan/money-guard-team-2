@@ -15,7 +15,7 @@ const Dashboard = () => {
         <nav style={{ marginRight: '100px' }}>
           <ul>
             <li><Link to="/dashboard/home">Home</Link></li>
-            <li><Link to="/dashboard/statistics">Statistics</Link></li>
+            <li><Link to="/statistics">Statistics</Link></li>
           </ul>
         </nav>
         <div style={{ flexGrow: 1 }}>
