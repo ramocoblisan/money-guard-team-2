@@ -18,7 +18,6 @@ const registerSchema = yup.object().shape({
   password: yup.string().required('Password is required'),
 });
 
-
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
@@ -26,6 +25,7 @@ const setAuthHeader = token => {
 const clearAuthHeader = () => {
   axios.defaults.headers.common.Authorization = '';
 };
+
 const validateRegistrationData = async (data) => {
   try {
     await registerSchema.validate(data, { abortEarly: false });
@@ -36,10 +36,9 @@ const validateRegistrationData = async (data) => {
 };
 
 const setLoggedIn = (user, token) => {
-  // Actualizăm starea de autentificare în funcție de nevoile aplicației
   console.log('Setting logged in state:', user, token);
-  localStorage.setItem('token', token); // Setăm token-ul în localStorage
-  setAuthHeader(token); // Setăm token-ul în header-ul de autorizare
+  localStorage.setItem('token', token);
+  setAuthHeader(token);
 };
 
 export const registerThunk = createAsyncThunk(
@@ -54,9 +53,8 @@ export const registerThunk = createAsyncThunk(
     try {
       console.log('Registering with credentials:', credentials);
       const res = await axios.post('/auth/sign-up', credentials);
-      console.log('Registration response:', res.data); 
+      console.log('Registration response:', res.data);
 
-      // Apelăm funcția setLoggedIn pentru a actualiza starea de autentificare
       setLoggedIn(res.data.user, res.data.token);
 
       setAuthHeader(res.data.token);
@@ -89,10 +87,9 @@ export const loginThunk = createAsyncThunk(
       const res = await axios.post('/auth/sign-in', credentials);
       console.log('Login response:', res.data);
 
-      // Apelăm funcția setLoggedIn pentru a actualiza starea de autentificare
       setLoggedIn(res.data.user, res.data.token);
 
-      setAuthHeader(res.data.token); // Setăm token-ul în header-ul de autorizare
+      setAuthHeader(res.data.token);
       if (res.status === 201) {
         Notiflix.Notify.success(`Successful login! Welcome, ${res.data.user.username}!`);
         return res.data;
@@ -115,13 +112,13 @@ export const loginThunk = createAsyncThunk(
 );
 
 export const logoutThunk = createAsyncThunk(
-  'auth/logout', 
+  'auth/logout',
   async (_, thunkAPI) => {
     try {
       const res = await axios.delete('/auth/sign-out');
       if (res.status === 204) {
         Notiflix.Notify.info('You have successfully logged out.');
-        localStorage.removeItem('token'); // Ștergem token-ul din localStorage la delogare
+        localStorage.removeItem('token');
         clearAuthHeader();
       }
       return res.data;
@@ -144,7 +141,7 @@ export const logoutThunk = createAsyncThunk(
 export const refreshThunk = createAsyncThunk(
   'auth/refresh',
   async (_, thunkAPI) => {
-    const savedToken = localStorage.getItem('token'); // Luăm token-ul din localStorage
+    const savedToken = localStorage.getItem('token');
     if (!savedToken) {
       return thunkAPI.rejectWithValue('Token does not exist!');
     }
@@ -168,6 +165,35 @@ export const getBalanceThunk = createAsyncThunk(
       return data;
     } catch (error) {
       console.error('Get balance error response:', error.response);
+      console.error('Error data:', error.response.data);
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+// Adăugăm funcțiile addTransactionThunk și deleteTransactionThunk
+export const addTransactionThunk = createAsyncThunk(
+  'auth/addTransaction',
+  async (transaction, thunkAPI) => {
+    try {
+      const { data } = await axios.post('/transactions', transaction);
+      return data;
+    } catch (error) {
+      console.error('Add transaction error response:', error.response);
+      console.error('Error data:', error.response.data);
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const deleteTransactionThunk = createAsyncThunk(
+  'auth/deleteTransaction',
+  async (transactionId, thunkAPI) => {
+    try {
+      const { data } = await axios.delete(`/transactions/${transactionId}`);
+      return data;
+    } catch (error) {
+      console.error('Delete transaction error response:', error.response);
       console.error('Error data:', error.response.data);
       return thunkAPI.rejectWithValue(error.message);
     }
