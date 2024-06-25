@@ -1,0 +1,207 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 20px 20px;
+    top: 60px;
+    width: 320px;
+    max-height: 690px;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    @media screen and (min-width: 768px) {
+      width: 100%;
+      height: 100%;
+      padding: 40px 73px;
+      top: 0;
+    }
+  }
+  
+  .formWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    justify-content: center;
+    align-items: center;
+  
+    @media screen and (min-width: 768px) {
+      width: 394px;
+    }
+  }
+  
+  .header {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 32px;
+    @media screen and (min-width: 768px) {
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+  }
+  
+  .secondContainer {
+    max-width: 280px;
+  }
+  @media screen and (min-width: 768px) {
+    .secondContainer {
+      max-width: 394px;
+    }
+  }
+  
+  .category {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    margin-bottom: 40px;
+    & > span {
+      color: red;
+      font-size: 0.8rem;
+      font-style: italic;
+    }
+  }
+  
+  .boxDate {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 40px;
+  
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      gap: 32px;
+    }
+  }
+  
+  .incomeInput,
+  .customInput {
+    width: 100%;
+    background-color: transparent;
+    border-style: none;
+    color: white;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 8px;
+  
+    @media screen and (min-width: 768px) {
+      width: 181px;
+    }
+  }
+  .incomeInput {
+    font-weight: var(--font-weight-semibold);
+  }
+  
+  .customInput {
+    width: 280px;
+    @media screen and (min-width: 768px) {
+      width: 100%;
+    }
+  }
+  
+  .incomeInput::placeholder,
+  .customInput::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .svgBox {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    background-color: transparent;
+    border-style: none;
+    color: white;
+    font-size: 18px;
+  
+    & > svg {
+      position: absolute;
+      right: 10px;
+      top: 6px;
+      fill: #734aef;
+      width: 24px;
+      height: 24px;
+    }
+    & > span {
+      color: red;
+      font-size: 0.8rem;
+      font-style: italic;
+    }
+    @media screen and (min-width: 768px) {
+      width: 181px;
+    }
+  }
+  
+  .comment,
+  .selectExpense {
+    width: 280px;
+    background-color: transparent;
+    padding: 8px;
+    border-style: none;
+    color: white;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+  
+    @media screen and (min-width: 768px) {
+      width: 100%;
+    }
+  }
+  
+  .comment::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .btnBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+  }
+  
+  .activeIncome {
+    color: #ffb627;
+    margin-right: 20px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .activeExpense {
+    color: rgb(255, 134, 141);
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .checkBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 11px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    cursor: pointer;
+    min-width: 280px;
+  }
+  
+  .inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+  
+    & > span {
+      color: red;
+      font-size: 0.8rem;
+      font-style: italic;
+    }
+  }
+  .active{
+    display: block;
+  }
+  .hidden{
+    display: none;
+  }

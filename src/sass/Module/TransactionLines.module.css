@@ -1,0 +1,101 @@
+.transaction_item {
+    border-radius: 10px;
+    background: rgb(255, 255, 255, 0.1);
+  }
+  
+  .income_border {
+    border-left: 5px solid rgb(255, 182, 39);
+  }
+  
+  .expense_border {
+    border-left: 5px solid rgb(255, 134, 141);
+  }
+  
+  .income_text {
+    color: rgb(255, 182, 39);
+    font-weight: 600;
+  }
+  
+  .expense_text {
+    color: rgb(255, 134, 141);
+    font-weight: 600;
+  }
+  
+  .transactions_table_mobile {
+    font-size: var(--primarily-font-size);
+    line-height: var(--primarily-line-height);
+    width: 100%;
+  }
+  
+  .transaction_colum {
+    width: 16.66%;
+  }
+  
+  .transaction_first_column {
+    font-weight: var(--font-weight-semibold);
+  }
+  
+  .transaction_row_mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px 12px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .transaction_row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 16px 10px 16px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
+    gap: 33px;
+  }
+  
+  .table_body tr:last-child {
+    border-bottom: none;
+  }
+  
+  .btn_delete {
+    width: 69px;
+    height: 29px;
+    padding: 4px 12px 4px 12px;
+    border-radius: 18px;
+    box-shadow: 1px 9px 15px 0px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(
+      166.82deg,
+      rgb(255, 199, 39) -66.598%,
+      rgb(158, 64, 186) 135.96%,
+      rgb(112, 0, 255) 231.793%
+    );
+    color: var(--white-color);
+    font-size: 14px;
+    line-height: var(--secondary-line-height);
+    text-align: center;
+    border: transparent;
+  }
+  
+  .btn_edit {
+    color: rgba(255, 255, 255, 0.6);
+    line-height: var(--primarily-line-height);
+    letter-spacing: 2%;
+    text-align: center;
+    border: transparent;
+    background-color: transparent;
+  }
+  
+  .btn_wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .icon_edit {
+    width: 14px;
+    height: 14px;
+    stroke: rgba(255, 255, 255, 0.6);
+    fill: transparent;
+  }

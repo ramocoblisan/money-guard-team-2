@@ -1,0 +1,50 @@
+.closeButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    stroke: none;
+    z-index: 1;
+    @media screen and (min-width: 768px) {
+      stroke: var(--white-color);
+    }
+  }
+  
+  .modalContent {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(100px);
+    box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(
+      rgba(83, 61, 186, 100%),
+      rgba(80, 48, 154, 100%),
+      rgba(106, 70, 165, 75%),
+      rgba(133, 93, 175, 19%)
+    );
+    background-color: rgba(255, 255, 255, 0.1);
+  overflow-y: auto;
+    @media screen and (min-width: 768px) {
+      width: 540px;
+      max-height: 590px;
+      border-radius: 8px;
+    }
+  }
+  .modalWrapper {
+    position: fixed;
+    overflow-y: auto;
+    z-index: 999;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(7px);
+    background: rgba(34, 13, 91, 0.23);
+  }
