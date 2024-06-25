@@ -1,11 +1,14 @@
 import React from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import { RestrictedRoute } from '../../authRoutes/RestrictedRoute';
+import  RestrictedRoute  from '../../authRoutes/RestrictedRoute';
+import PrivateRoute from '../../authRoutes/PrivateRoute'
 
 import BackupHome from '../Pages/BackupHome';
 import Register from '../Pages/RegisterPage';
 import Login from '../Pages/LoginPage';
 import Dashboard from '../Pages/DashboardPage';
+import Home from '../Pages/HomePage';
+
 
 const basename = process.env.NODE_ENV === 'production' ? '/money-guard-team-2' : '/';
 
@@ -19,6 +22,12 @@ function App() {
           path="/register"
           element={<RestrictedRoute component={Register} redirectTo="/" />}
         /> */}
+        
+            <Route
+              path="/home"
+              element={<PrivateRoute component={Home} redirectTo="/" />}
+            />
+            
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route 

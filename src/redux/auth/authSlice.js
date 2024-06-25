@@ -1,78 +1,136 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { registerThunk, loginThunk, logoutThunk, refreshThunk, getBalanceThunk } from './operations';
+import { createSlice, isAnyOf } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
+
+import {
+  getBalanceThunk,
+  loginThunk,
+  logoutThunk,
+  refreshThunk,
+  registerThunk,
+} from './operations';
+import {
+  addTransactionThunk,
+  deleteTransactionThunk,
+} from '../transactions/operations';
 
 const initialState = {
-  user: null,
+  user: {
+    username: '',
+    email: '',
+  },
   token: null,
-  isAuthenticated: false,
-  isLoading: false,
-  error: null,
+  loading: false,
+  error: false,
+  isLoggedIn: false,
+  isRefresh: false,
+  balance: 0,
 };
 
-const authSlice = createSlice({
+const slice = createSlice({
   name: 'auth',
   initialState,
-  reducers: {},
-  extraReducers: (builder) => {
+  selectors: {
+    selectUser: state => state.user,
+    selectIsLoggedIn: state => state.isLoggedIn,
+    selectToken: state => state.isLoggedIn,
+    selectIsRefresh: state => state.isRefresh,
+    selectBalance: state => state.balance,
+    selectIsLoading: state => state.loading,
+  },
+  reducers: {
+    logout: state => {
+      return initialState;
+    },
+  },
+  extraReducers: builder => {
     builder
-      .addCase(registerThunk.pending, (state) => {
-        state.isLoading = true;
-        state.error = null;
+      .addCase(getBalanceThunk.fulfilled, (state, { payload }) => {
+        state.balance = payload.balance;
       })
-      .addCase(registerThunk.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.user = action.payload.user;
-        state.token = action.payload.token;
-        state.isAuthenticated = true;
+      .addCase(addTransactionThunk.fulfilled, (state, { payload }) => {
+        state.balance = state.balance + payload.amount;
       })
-      .addCase(registerThunk.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
+      .addCase(deleteTransactionThunk.fulfilled, (state, { payload }) => {
+        state.balance = state.balance - payload.amount;
       })
-      .addCase(loginThunk.pending, (state) => {
-        state.isLoading = true;
-        state.error = null;
+      .addCase(logoutThunk.fulfilled, state => {
+        return initialState;
       })
-      .addCase(loginThunk.fulfilled, (state, action) => {
-        state.isLoading = false;
-        if (action.payload && action.payload.user && action.payload.token) {
-        state.user = action.payload.user;
-        state.token = action.payload.token;
-        state.isAuthenticated = true;
-        } else {
-          // Handle the case where action.payload is undefined or null
-          console.error('Login succeeded but payload is undefined or null:', action.payload);
-          state.error = 'Login response does not contain user or token';
+      .addCase(refreshThunk.fulfilled, (state, { payload }) => {
+        state.user.username = payload.username;
+        state.user.email = payload.email;
+        state.balance = payload.balance;
+        state.isLoggedIn = true;
+        state.loading = false;
+        state.isRefresh = false;
+        state.loading = false;
+      })
+      .addCase(loginThunk.rejected, (state, { payload }) => {
+        state.error = payload;
+        state.loading = false;
+        state.isRefresh = false;
+        toast.error(payload);
+      })
+      .addCase(registerThunk.rejected, (state, { payload }) => {
+        state.error = payload;
+        state.loading = false;
+        state.isRefresh = false;
+        toast.error(payload);
+      })
+      .addCase(refreshThunk.rejected, (state, { payload }) => {
+        state.error = payload;
+        state.loading = false;
+        state.isRefresh = false;
+      })
+      .addMatcher(
+        isAnyOf(registerThunk.fulfilled, loginThunk.fulfilled),
+        (state, { payload }) => {
+          state.user.username = payload.user.username;
+          state.user.email = payload.user.email;
+          state.user.password = payload.user.password;
+          state.balance = payload.user.balance;
+          state.token = payload.token;
+          state.loading = false;
+          state.isLoggedIn = true;
+          state.loading = false;
+          state.isRefresh = false;
+          toast.success(`Welcome, ${payload.user.username}`);
         }
-      })
-      .addCase(loginThunk.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
-      })
-      .addCase(logoutThunk.fulfilled, (state) => {
-        state.user = null;
-        state.token = null;
-        state.isAuthenticated = false;
-      })
-      .addCase(refreshThunk.fulfilled, (state, action) => {
-        state.user = action.payload;
-        state.isAuthenticated = true;
-      })
-      .addCase(refreshThunk.rejected, (state, action) => {
-        state.isAuthenticated = false;
-        state.token = null;
-        state.user = null;
-      })
-      .addCase(getBalanceThunk.fulfilled, (state, action) => {
-        state.user.balance = action.payload.balance;
-      });
+      )
+      .addMatcher(
+        isAnyOf(
+          registerThunk.pending,
+          loginThunk.pending,
+          refreshThunk.pending
+        ),
+        state => {
+          state.loading = true;
+          state.error = null;
+          state.isRefresh = true;
+        }
+      )
+      .addMatcher(
+        isAnyOf(
+          registerThunk.rejected,
+          loginThunk.rejected,
+          refreshThunk.rejected
+        ),
+        (state, { payload }) => {
+          state.error = payload;
+          state.loading = false;
+          state.isRefresh = false;
+        }
+      );
   },
 });
 
-// Selectors
-export const selectIsLoggedIn = (state) => state.auth.isAuthenticated;
-export const selectCurrentUser = (state) => state.auth.user;
-export const selectIsLoading = (state) => state.auth.isLoading;
-export const selectError = (state) => state.auth.error;
-
-export default authSlice.reducer;
+export const authReducer = slice.reducer;
+export const {
+  selectIsLoggedIn,
+  selectUser,
+  selectToken,
+  selectIsRefresh,
+  selectBalance,
+  selectIsLoading,
+} = slice.selectors;
+export const { logout } = slice.actions;
