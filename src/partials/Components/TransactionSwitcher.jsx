@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../../sass/Module/TransactionSwitcher.module.css';
+import * as styles from "../../sass/Module/TransactionSwitcher.module.css";
 
 const TransactionSwitcher = ({ onChange }) => {
   const [isIncome, setIsIncome] = useState(false);
@@ -16,7 +16,7 @@ const TransactionSwitcher = ({ onChange }) => {
 
       <label
         className={`${styles.switch} ${
-          isIncome ? styles.income : styles.expense
+          isIncome ? styles.labelIncome : styles.labelExpense
         }`}
       >
         <input type="checkbox" onChange={handleSwitch} checked={!isIncome} />

@@ -10,7 +10,7 @@ import FormInput from './FormField';
 import { formatDate } from '../../more/addLeaddingzero';
 
 //import 'react-datepicker/dist/react-datepicker.css';
-import s from '../../sass/Module/Form.module.css';
+import * as style from "../../sass/Module/Form.module.css";
 import sprite from '../../images/svg/sprite.svg';
 
 export function Form({
@@ -91,16 +91,16 @@ export function Form({
   };
 
   return (
-    <div className={s.container}>
-      <form className={s.formWrapper} onSubmit={handleSubmit(submit)}>
-        <h1 className={s.header}>
+    <div className={style.container}>
+      <form className={style.formWrapper} onSubmit={handleSubmit(submit)}>
+        <h1 className={style.header}>
           {typeForm === 'add' ? 'Add transaction' : 'Edit transaction'}
         </h1>
         {typeForm === 'add' ? (
           <TransactionSwitcher onChange={toggleTransaction} />
         ) : (
           <div>
-            <ul className={s.checkBox}>
+            <ul className={style.checkBox}>
               <li
                 onClick={() => {
                   if (!(typeForm === 'edit' && type === 'EXPENSE')) {
@@ -109,7 +109,7 @@ export function Form({
                 }}
                 className={
                   content.type === 'INCOME' || type === 'INCOME'
-                    ? s.activeIncome
+                    ? style.activeIncome
                     : ''
                 }
                 disabled={typeForm === 'edit' && type === 'EXPENSE'}
@@ -124,7 +124,7 @@ export function Form({
                     toggleTransaction(false);
                   }
                 }}
-                className={type === 'EXPENSE' ? s.activeExpense : ''}
+                className={type === 'EXPENSE' ? style.activeExpense : ''}
                 disabled={typeForm === 'edit' && type === 'INCOME'}
               >
                 {' '}
@@ -133,9 +133,9 @@ export function Form({
             </ul>
           </div>
         )}
-        <div className={s.secondContainer}>
+        <div className={style.secondContainer}>
           {type === 'EXPENSE' && (
-            <div className={s.category}>
+            <div className={style.category}>
               <Select
                 name="category"
                 className="react-select-container"
@@ -146,23 +146,23 @@ export function Form({
                 onChange={handleChange}
                 isDisabled={typeForm === 'edit'}
               />
-              <span className={!isHidden ? s.active : s.hidden}>
+              <span className={!isHidden ? style.active : style.hidden}>
                 Please, choose the category
               </span>
             </div>
           )}
-          <div className={s.boxDate}>
+          <div className={style.boxDate}>
             <FormInput
-              className={s.incomeInput}
+              className={style.incomeInput}
               name="amount"
               placeholder="0.00"
               autoComplete="false"
               errors={errors}
               register={register}
             />
-            <div className={s.svgBox}>
+            <div className={style.svgBox}>
               <DatePicker
-                className={s.customInput}
+                className={style.customInput}
                 selected={startDate}
                 onChange={date => {
                   setValue('transactionDate', date);
@@ -179,14 +179,14 @@ export function Form({
           </div>
 
           <FormInput
-            className={s.comment}
+            className={style.comment}
             name="comment"
             placeholder="Comment"
             errors={errors}
             register={register}
           />
 
-          <div className={s.btnBox}>
+          <div className={style.btnBox}>
             <button className="modalButtonColor">
               {typeForm === 'add' ? 'ADD' : 'EDIT'}
             </button>

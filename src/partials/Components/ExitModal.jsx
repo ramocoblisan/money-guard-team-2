@@ -6,7 +6,7 @@ import { logout } from '../../redux/auth/authSlice';
 import { logoutThunk } from '../../redux/auth/operations';
 
 import sprite from '../../images/svg/sprite.svg';
-import style from '../../sass/Module/ExitModal.module.css';
+import * as style from "../../sass/Module/ExitModal.module.css";
 
 export const Exit = ({ closeModal }) => {
   const navigate = useNavigate();

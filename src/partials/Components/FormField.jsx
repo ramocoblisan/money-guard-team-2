@@ -1,10 +1,10 @@
 import React from 'react';
 
-import s from '../../sass/Module/Form.module.css';
+import * as style from "../../sass/Module/Form.module.css";
 
 const FormInput = ({ name, register, errors, placeholder, className }) => {
   return (
-    <div className={s.inputContainer}>
+    <div className={style.inputContainer}>
       <input
         autoComplete="off"
         className={className}
