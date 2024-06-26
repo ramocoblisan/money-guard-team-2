@@ -1,9 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as yup from 'yup';
 import Notiflix from 'notiflix';
+import axiosWallet from '../../axiosWallet';
 
-import axios from 'axios';
-axios.defaults.baseURL = 'https://wallet.b.goit.study/api';
 Notiflix.Notify.init({
   width: '280px',
   position: 'center-center',
@@ -16,10 +15,10 @@ const registerSchema = yup.object().shape({
   password: yup.string().required('Password is required'),
 });
 const setAuthHeader = token => {
-  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  axiosWallet.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 const clearAuthHeader = () => {
-  axios.defaults.headers.common.Authorization = '';
+  axiosWallet.defaults.headers.common.Authorization = '';
 };
 const validateRegistrationData = async (data) => {
   try {
@@ -45,7 +44,7 @@ export const registerThunk = createAsyncThunk(
     }
     try {
       console.log('Registering with credentials:', credentials);
-      const res = await axios.post('/auth/sign-up', credentials);
+      const res = await axiosWallet.post('/auth/sign-up', credentials);
       console.log('Registration response:', res.data);
       // Apelăm funcția setLoggedIn pentru a actualiza starea de autentificare
       setLoggedIn(res.data.user, res.data.token);
@@ -75,7 +74,7 @@ export const loginThunk = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       console.log('Logging in with credentials:', credentials);
-      const res = await axios.post('/auth/sign-in', credentials);
+      const res = await axiosWallet.post('/auth/sign-in', credentials);
       console.log('Login response:', res.data);
       // Apelăm funcția setLoggedIn pentru a actualiza starea de autentificare
       setLoggedIn(res.data.user, res.data.token);
@@ -104,7 +103,7 @@ export const logoutThunk = createAsyncThunk(
   'auth/logout',
   async (_, thunkAPI) => {
     try {
-      const res = await axios.delete('/auth/sign-out');
+      const res = await axiosWallet.delete('/auth/sign-out');
       if (res.status === 204) {
         Notiflix.Notify.info('You have successfully logged out.');
         localStorage.removeItem('token'); // Ștergem token-ul din localStorage la delogare
@@ -135,7 +134,7 @@ export const refreshThunk = createAsyncThunk(
     }
     try {
       setAuthHeader(savedToken);
-      const { data } = await axios.get('/users/current');
+      const { data } = await axiosWallet.get('/users/current');
       return data;
     } catch (error) {
       console.error('Refresh error response:', error.response);
@@ -148,7 +147,7 @@ export const getBalanceThunk = createAsyncThunk(
   'auth/getBalance',
   async (_, thunkAPI) => {
     try {
-      const { data } = await axios.get('/users/current');
+      const { data } = await axiosWallet.get('/users/current');
       return data;
     } catch (error) {
       console.error('Get balance error response:', error.response);
@@ -162,7 +161,7 @@ export const fetchTransactionsDataThunk = createAsyncThunk(
   'fetchTransactionsData',
   async (_, thunkAPI) => {
     try {
-      const { data } = await axios.get('/transactions');
+      const { data } = await axiosWallet.get('/transactions');
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -173,7 +172,7 @@ export const deleteTransactionThunk = createAsyncThunk(
   'deleteTransaction',
   async (transaction, thunkAPI) => {
     try {
-      await axios.delete(`/transactions/${transaction.id}`);
+      await axiosWallet.delete(`/transactions/${transaction.id}`);
       return transaction;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -184,7 +183,7 @@ export const addTransactionThunk = createAsyncThunk(
   'addTransaction',
   async (body, thunkAPI) => {
     try {
-      const { data } = await axios.post('/transactions', body);
+      const { data } = await axiosWallet.post('/transactions', body);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -195,7 +194,7 @@ export const editTransactionThunk = createAsyncThunk(
   'editTransaction',
   async (body, thunkAPI) => {
     try {
-      const { data } = await axios.patch(`/transactions/${body.id}`, body.content);
+      const { data } = await axiosWallet.patch(`/transactions/${body.id}`, body.content);
       thunkAPI.dispatch(refreshThunk());
       return data;
     } catch (error) {
@@ -207,7 +206,7 @@ export const fetchTransactionCategoriesThunk = createAsyncThunk(
   'fetchTransactionCategories',
   async (_, thunkAPI) => {
     try {
-      const { data } = await axios.get('/transaction-categories');
+      const { data } = await axiosWallet.get('/transaction-categories');
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -218,7 +217,7 @@ export const fetchTransactionSummaryControllerThunk = createAsyncThunk(
   'fetchTransactionSummaryController',
   async (query, thunkAPI) => {
     try {
-      const { data } = await axios.get(`/transactions-summary?month=${query.month}&year=${query.year}`);
+      const { data } = await axiosWallet.get(`/transactions-summary?month=${query.month}&year=${query.year}`);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

@@ -1,9 +1,7 @@
-import axios from 'axios';
+import axiosWallet from '../../axiosWallet';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as yup from 'yup';
 import Notiflix from 'notiflix';
-
-axios.defaults.baseURL = 'https://wallet.b.goit.study/api';
 
 Notiflix.Notify.init({
   width: '280px',
@@ -19,11 +17,11 @@ const registerSchema = yup.object().shape({
 });
 
 const setAuthHeader = token => {
-  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  axiosWallet.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
 const clearAuthHeader = () => {
-  axios.defaults.headers.common.Authorization = '';
+  axiosWallet.defaults.headers.common.Authorization = '';
 };
 
 const validateRegistrationData = async (data) => {
@@ -52,7 +50,7 @@ export const registerThunk = createAsyncThunk(
 
     try {
       console.log('Registering with credentials:', credentials);
-      const res = await axios.post('/auth/sign-up', credentials);
+      const res = await axiosWallet.post('/auth/sign-up', credentials);
       console.log('Registration response:', res.data);
 
       setLoggedIn(res.data.user, res.data.token);
@@ -84,7 +82,7 @@ export const loginThunk = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       console.log('Logging in with credentials:', credentials);
-      const res = await axios.post('/auth/sign-in', credentials);
+      const res = await axiosWallet.post('/auth/sign-in', credentials);
       console.log('Login response:', res.data);
 
       setLoggedIn(res.data.user, res.data.token);
@@ -115,7 +113,7 @@ export const logoutThunk = createAsyncThunk(
   'auth/logout',
   async (_, thunkAPI) => {
     try {
-      const res = await axios.delete('/auth/sign-out');
+      const res = await axiosWallet.delete('/auth/sign-out');
       if (res.status === 204) {
         Notiflix.Notify.info('You have successfully logged out.');
         localStorage.removeItem('token');
@@ -147,7 +145,7 @@ export const refreshThunk = createAsyncThunk(
     }
     try {
       setAuthHeader(savedToken);
-      const { data } = await axios.get('/users/current');
+      const { data } = await axiosWallet.get('/users/current');
       return data;
     } catch (error) {
       console.error('Refresh error response:', error.response);
@@ -161,7 +159,7 @@ export const getBalanceThunk = createAsyncThunk(
   'auth/getBalance',
   async (_, thunkAPI) => {
     try {
-      const { data } = await axios.get('/users/current');
+      const { data } = await axiosWallet.get('/users/current');
       return data;
     } catch (error) {
       console.error('Get balance error response:', error.response);
@@ -176,7 +174,7 @@ export const addTransactionThunk = createAsyncThunk(
   'auth/addTransaction',
   async (transaction, thunkAPI) => {
     try {
-      const { data } = await axios.post('/transactions', transaction);
+      const { data } = await axiosWallet.post('/transactions', transaction);
       return data;
     } catch (error) {
       console.error('Add transaction error response:', error.response);
@@ -190,7 +188,7 @@ export const deleteTransactionThunk = createAsyncThunk(
   'auth/deleteTransaction',
   async (transactionId, thunkAPI) => {
     try {
-      const { data } = await axios.delete(`/transactions/${transactionId}`);
+      const { data } = await axiosWallet.delete(`/transactions/${transactionId}`);
       return data;
     } catch (error) {
       console.error('Delete transaction error response:', error.response);
