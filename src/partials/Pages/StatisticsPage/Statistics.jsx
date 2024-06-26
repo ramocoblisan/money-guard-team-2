@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getCategories, getStatistics } from '../../../redux/statistics/statisticsOperations';
 import { selectCategories, selectStatisticsData } from '../../../redux/statistics/statisticsSelectors';
 import { DataTable } from '../../Components/Statistics/statisticsDataTable';
-import DatePicker from '../../Components/Statistics/DatePicker';
+import DatePicker from '../../Components/Statistics/datePicker';
 import StatisticsChart from '../../Components/Statistics/statisticsChart';
 
 import {
