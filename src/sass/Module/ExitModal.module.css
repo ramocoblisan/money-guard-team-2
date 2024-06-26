@@ -1,0 +1,19 @@
+.wrap {
+    padding: 40px;
+  }
+  
+  .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 52px;
+    font-size: 26px;
+    color: var(--white-color);
+  }
+  
+  .text {
+    margin-bottom: 52px;
+    text-align: center;
+    font-size: 18px;
+    color: var(--white-color);
+  }

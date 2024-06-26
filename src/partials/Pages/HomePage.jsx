@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
-const HomePage = () => {
+import TransactionTable from '../Components/TransactionTable';
+import Balance from '../Components/Balance';
+
+
+import { fetchTransactionsDataThunk } from '../../redux/transactions/operations';
+import useResize from '../../hooks/useResize';
+
+const Home = () => {
+  const dispatch = useDispatch();
+
+  const screenWidth = useResize().windowWidth;
+
+  useEffect(() => {
+    dispatch(fetchTransactionsDataThunk());
+  }, [dispatch]);
+
   return (
-    <div>
-      <h2>Home Page Content</h2>
-    </div>
+    <>
+      {screenWidth < 768 && <Balance />}
+      <TransactionTable />
+    </>
   );
 };
 
-export default HomePage;
+export default Home;

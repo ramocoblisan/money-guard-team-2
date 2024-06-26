@@ -1,10 +1,14 @@
 import React, { lazy, Suspense } from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import { RestrictedRoute } from '../../authRoutes/RestrictedRoute';
+import  RestrictedRoute  from '../../authRoutes/RestrictedRoute';
+import PrivateRoute from '../../authRoutes/PrivateRoute'
+
 import BackupHome from '../Pages/BackupHome';
 import Register from '../Pages/RegisterPage';
 import Login from '../Pages/LoginPage';
 import Dashboard from '../Pages/DashboardPage';
+import Home from '../Pages/HomePage';
+
 
 const StatisticsPage = lazy(() => import('../Pages/StatisticsPage/Statistics'));
 
@@ -20,6 +24,12 @@ function App() {
           path="/register"
           element={<RestrictedRoute component={Register} redirectTo="/" />}
         /> */}
+        
+            <Route
+              path="/home"
+              element={<PrivateRoute component={Home} redirectTo="/" />}
+            />
+            
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route 
@@ -35,5 +45,6 @@ function App() {
     </BrowserRouter>
   );
 }
+
 
 export default App;

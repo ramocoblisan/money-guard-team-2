@@ -1,0 +1,90 @@
+.header {
+    padding: 12px 0;
+    height: 60px;
+    box-shadow: 0 4px 40px 0 rgba(0, 0, 0, 0.25),
+      inset 0 -3px 2px 0 rgba(0, 0, 0, 0.1);
+    background: linear-gradient(276deg, #2e1746 3.19%, #2e225f 100%);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    @media screen and (min-width: 768px) {
+      height: 80px;
+      padding: 16px 0;
+    }
+  }
+  
+  .headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 320px;
+    padding: 0 20px;
+  
+    @media screen and (min-width: 768px) {
+      padding: 0 32px;
+      width: 768px;
+    }
+    @media screen and (min-width: 1280px) {
+      padding: 0 16px;
+      width: 1280px;
+    }
+  }
+  
+  .logo {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    align-items: center;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--white-color);
+  
+    @media (min-width: 768px) {
+      font-size: 17px;
+    }
+  }
+  
+  .wrap {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  
+  .user {
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 30px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  @media screen and (min-width: 768px) {
+    .button::before {
+      display: block;
+      position: absolute;
+      left: -12px;
+      top: 0;
+      content: '';
+      width: 1px;
+      height: 100%;
+      border-radius: 2px;
+      background: rgba(255, 255, 255, 0.6);
+    }
+  }
+  .icon {
+    fill: rgba(255, 255, 255, 0.6);
+  }
