@@ -1,0 +1,91 @@
+@media screen and (max-width: 767px) {
+    .react-select__control {
+      background-color: transparent !important;
+      content: rgba(255, 255, 255, 0.6) !important;
+      border-style: none !important;
+      border-radius: 0px !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.6) !important;
+      width: 100% !important;
+    }
+    .react-select__menu {
+      font-size: 16px;
+      color: white;
+      background-color: transparent !important;
+    }
+  
+    .react-select__single-value {
+      color: white !important;
+    }
+  
+    .react-select__indicator-separator {
+      width: 0px !important;
+    }
+  
+    .react-select__dropdown-indicator {
+      color: rgba(255, 255, 255, 0.6) !important;
+    }
+  
+    .react-select__menu-list {
+      backdrop-filter: blur(100px) !important;
+      background: rgba(83, 61, 172, 50) !important;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    .react-select__control {
+      background-color: transparent !important;
+      border-style: none !important;
+      border-radius: 0px !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.6) !important;
+      width: 100% !important;
+    }
+  
+    .react-select__menu {
+      font-size: 16px;
+      color: white;
+      background-color: transparent !important;
+    }
+  
+    .react-select__single-value {
+      color: white !important;
+    }
+  
+    .react-select__indicator-separator {
+      width: 0px !important;
+    }
+  
+    .react-select__dropdown-indicator {
+      color: rgba(255, 255, 255, 0.6) !important;
+    }
+  
+    .react-select__menu-list {
+      backdrop-filter: blur(100px) !important;
+      background: rgba(83, 61, 172, 85) !important;
+    }
+    .react-select-container .react-select__option {
+      background-color: transparent !important;
+    }
+  
+    .react-select-container .react-select__option--is-focused {
+      color: rgb(255, 134, 141) !important;
+      background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .react-select-container .react-select__option {
+      background-color: transparent !important;
+    }
+    .react-select-container .react-select__option:hover {
+      color: rgb(255, 134, 141) !important;
+      background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+    .react-select-container .react-select__option--is-focused {
+      color: rgb(255, 134, 141) !important;
+      background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+  }
+  .react-select__placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-size: 18px !important;
+  }
