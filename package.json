@@ -44,6 +44,7 @@
     "redux-persist": "^6.0.0",
     "styled-components": "^6.1.11",
     "url-search-params-polyfill": "^8.2.5",
+    "uuid": "^10.0.0",
     "yup": "^1.4.0"
   },
   "devDependencies": {

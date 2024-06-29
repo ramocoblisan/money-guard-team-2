@@ -203,12 +203,20 @@ export const editTransactionThunk = createAsyncThunk(
   }
 );
 export const fetchTransactionCategoriesThunk = createAsyncThunk(
-  'fetchTransactionCategories',
+  'transaction/transactionCategories',
   async (_, thunkAPI) => {
     try {
-      const { data } = await axiosWallet.get('/transaction-categories');
-      return data;
+      const response = await axiosWallet.get('/transaction-categories');
+      if (response.status === 200) {
+        // Notiflix.Notify.success('Transactions returned!')
+      }
+      return response.data;
     } catch (error) {
+      if (error.response && error.response.status === 401) {
+        Notiflix.Notify.failure('Bearer auth failed!');
+      } else {
+        Notiflix.Notify.failure('Unexpected error. Please try again later.');
+      }
       return thunkAPI.rejectWithValue(error.message);
     }
   }
