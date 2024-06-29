@@ -9,7 +9,8 @@ import FormInput from './FormField';
 
 import { formatDate } from '../../more/addLeaddingzero';
 
-//import 'react-datepicker/dist/react-datepicker.css';
+import "react-datepicker/dist/react-datepicker.css";
+
 import * as style from "../../sass/Module/Form.module.css";
 import sprite from '../../images/svg/sprite.svg';
 
@@ -168,6 +169,8 @@ export function Form({
                   setValue('transactionDate', date);
                   setStartDate(date);
                 }}
+                wrapperClassName={style.datePickerWrapper}
+                calendarClassName={style.datePickerCalendar}
               />
               <svg width="36" height="36">
                 <use xlinkHref={`${sprite}#icon-date`} />
