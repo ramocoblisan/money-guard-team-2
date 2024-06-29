@@ -169,8 +169,8 @@ export function Form({
                   setValue('transactionDate', date);
                   setStartDate(date);
                 }}
-                wrapperClassName={style.datePickerWrapper}
-                calendarClassName={style.datePickerCalendar}
+                wrapperClassName={style.reactDatepickerWrapper} // Numele corect este "reactDatepickerWrapper"
+                calendarClassName={style.reactDatepickerCalendar} // Numele corect este "reactDatepickerCalendar"
               />
               <svg width="36" height="36">
                 <use xlinkHref={`${sprite}#icon-date`} />
