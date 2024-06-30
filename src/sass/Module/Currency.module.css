@@ -1,35 +1,114 @@
-.currencyContainer {
-    background: rgba(103, 77, 166, 0.7);
-    height: 380px;
-    width: 480px;
+.currencyTable {
+    max-height: 170px;
+    width: 100%;
     margin-top: 32px;
-    box-shadow: 0px 4px 60px 0px #00000040;
+    background: rgba(74, 86, 226, 0.1);
+    box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
 }
 
+@media only screen and (max-width: 1280px) {
+    .currencyTable {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .currencyTable {
+        width: 320px;
+    }
+}
+
+.currencyTableWrapper {
+    background: rgba(255, 255, 255, 0.2);}
 
 .currencyTableHead {
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
     align-items: center;
+    justify-content: center;
     gap: 55px;
-    padding: 19px 0;
-    color: #FFFFFF;
-    background: rgba(255, 255, 255, 0.2);
-
-    
+    width: 480px;
+    height: 56px;
 }
 
-.currencyTableBody {
+@media only screen and (max-width: 1280px) {
+    .currencyTableHead {
+        width: 336px;
+    }
+}
+
+@media only screen and (max-width: 1279px) {
+    .currencyTableHead {
+        padding: 15px 0;
+        gap: 58px;
+        margin: 0 0 8px 10px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .currencyTableHead {
+        gap: 52px;
+    }
+}
+
+.currencyTableHeadItem {
+    color: #fbfbfb;
+    font-size: 16px;
+    font-family: 'Poppins-SemiBold', sans-serif;
+    text-align: center;
+}
+
+.tableBodyList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 0;
+    padding-bottom: 41Ípx;
+}
+
+@media only screen and (max-width: 1279px) {
+    .tableBodyList {
+        margin-left: 15px;
+        margin-bottom: 0;
+        gap: 12px;
+    }
+}
+
+.tableBody {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    gap: 55px;
-    padding: 19px 0;
-    margin: 0 auto 24px;
-    width: 480px;
-    color: #FFFFFF;
+    gap: 60px;
 }
 
+@media only screen and (max-width: 1279px) {
+    .tableBody {
+        gap: 65px;
+    }
+}
 
+@media only screen and (max-width: 320px) {
+    .tableBody {
+        gap: 57px;
+    }
+}
+
+.tableItem {
+    display: inline-block;
+    color: #fbfbfb;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    width: 62px;
+    font-weight: 400;
+}
+
+.tableItem:last-child {
+    width: 42px;
+}
+
+.tableItem:first-child {
+    width: 125px;
+}

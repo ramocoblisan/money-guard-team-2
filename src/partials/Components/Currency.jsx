@@ -1,28 +1,91 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Notiflix from 'notiflix';
+import { getCurrency } from '../../redux/currency/operations';
+import {
+  selectorCurrency,
+  selectorIsLoading,
+  selectorError,
+} from '../../redux/currency/selectors';
 import styles from '../../sass/Module/Currency.module.css';
+import CurrencyDiagram from './CurrencyDiagram';
+import { useDashboard } from '../../hooks/useDashboard';
 
-const Currency = () => {
+const ExchangeRates = () => {
+  const dispatch = useDispatch();
+  const currencyData = useSelector(selectorCurrency);
+  const isLoading = useSelector(selectorIsLoading);
+  const error = useSelector(selectorError);
+
+  const { isBigScreen, isTabletOrMobile } = useDashboard();
+
+  useEffect(() => {
+    dispatch(getCurrency());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (error) {
+      Notiflix.Notify.failure('Error fetching currency data!');
+    }
+  }, [error]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  const usdToRon = currencyData.rates?.RON;
+  const eurToUsd = currencyData.rates?.EUR;
+  const eurToRon = eurToUsd * usdToRon;
+
+  if (!usdToRon || !eurToRon) {
+    return <div>No data available</div>;
+  }
+
+  const displayedRates = {
+    USD: usdToRon,
+    EUR: eurToRon,
+  };
+
+  const saleRates = {
+    USD: usdToRon * 0.98,
+    EUR: eurToRon * 0.98,
+  };
+
   return (
-    <div className={styles.currencyContainer}>
-      <table>
-        <tr className={styles.currencyTableHead}>
-          <th>Currency</th>
-          <th>Purchase</th>
-          <th>Sale</th>
-        </tr>
-        <tr className={styles.currencyTableBody}>
-          <td>USD</td>
-          <td>40.35</td>
-          <td>40.80</td>
-        </tr>
-        <tr className={styles.currencyTableBody}>
-          <td>EUR</td>
-          <td>43.20</td>
-          <td>43.80</td>
-        </tr>
+    <div className={styles.exchangeRates}>
+      <table className={styles.currencyTable}>
+        <thead className={styles.currencyTableWrapper}>
+          <tr className={styles.currencyTableHead}>
+            <th className={styles.currencyTableHeadItem}>Currency</th>
+            <th className={styles.currencyTableHeadItem}>Purchase</th>
+            <th className={styles.currencyTableHeadItem}>Sale</th>
+          </tr>
+        </thead>
+        <tbody className={styles.tableBodyList}>
+          {Object.keys(displayedRates).map(currency => {
+            const purchaseRate = displayedRates[currency] * 0.98;
+            const saleRate = displayedRates[currency] * 1.02;
+            return (
+              <tr className={styles.tableBody} key={currency}>
+                <td className={styles.tableItem}>{currency}</td>
+                <td className={styles.tableItem}>{purchaseRate.toFixed(2)}</td>
+                <td className={styles.tableItem}>{saleRate.toFixed(2)}</td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
+      <CurrencyDiagram
+        currency={saleRates}
+        isBigScreen={isBigScreen}
+        isTabletOrMobile={isTabletOrMobile}
+      />
     </div>
   );
 };
 
-export default Currency;
+export default ExchangeRates;
