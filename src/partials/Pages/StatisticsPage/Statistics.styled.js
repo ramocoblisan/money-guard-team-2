@@ -32,6 +32,7 @@ export const StatSection = styled.div`
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  gap: 30px;
   @media screen and (max-width: 768px) {
     flex-direction: column;
     align-items: center;
@@ -62,6 +63,11 @@ export const DatePickerWrapper = styled.div`
   margin-bottom: 20px;
 `;
 
+export const DatePickerNoTransaction = styled.div`
+display: flex;
+flex-direction: row;
+gap: 20px;
+`;
 export const DataWrapper = styled.div`
   width: 100%;
   padding-bottom: 45px;

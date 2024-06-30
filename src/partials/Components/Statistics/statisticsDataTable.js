@@ -16,6 +16,11 @@ import {
 import { colors } from './statiscticsColors';
 
 const DataTable = ({ reduxData }) => {
+  // Ensure reduxData and its properties are defined
+  const categoriesSummary = reduxData && reduxData.categoriesSummary ? reduxData.categoriesSummary : [];
+  const expenseSummary = reduxData && reduxData.expenseSummary ? reduxData.expenseSummary : 0;
+  const incomeSummary = reduxData && reduxData.incomeSummary ? reduxData.incomeSummary : 0;
+
   return (
     <Container>
       <Head>
@@ -27,17 +32,17 @@ const DataTable = ({ reduxData }) => {
         </HeadText>
       </Head>
       <Body>
-        {reduxData.categoryExpenses
-          .filter(category => category.total !== '0.00')
+        {categoriesSummary
+          .filter(category => category.total !== 0)
           .map(category => {
             const boxColor = colors.find(color => color.name === category.name);
             return (
               <StyledTr key={category.name}>
                 <StyledTdCat>
-                  <ColorBox color={boxColor.color} />
+                  <ColorBox color={boxColor ? boxColor.color : '#000'} />
                   <RowText>
                     <span>{category.name}</span>
-                    <StyledTdSum>{category.total}</StyledTdSum>
+                    <StyledTdSum>{category.total.toFixed(2)}</StyledTdSum>
                   </RowText>
                 </StyledTdCat>
               </StyledTr>
@@ -48,13 +53,13 @@ const DataTable = ({ reduxData }) => {
         <Expenses>
           <span>Expenses:</span>
           <StyledTdTotal className="expenses">
-            {reduxData.totalExpenses.toFixed(2)}
+            {expenseSummary.toFixed(2)}
           </StyledTdTotal>
         </Expenses>
         <Income>
           <span>Income:</span>
           <StyledTdTotal className="income">
-            {reduxData.totalIncome.toFixed(2)}
+            {incomeSummary.toFixed(2)}
           </StyledTdTotal>
         </Income>
       </Footer>
@@ -62,4 +67,4 @@ const DataTable = ({ reduxData }) => {
   );
 };
 
-export default DataTable; 
+export default DataTable;
