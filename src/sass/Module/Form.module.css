@@ -142,8 +142,7 @@
     border-style: none;
     color: white;
     font-size: 18px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);    cursor: pointer;
   
     @media screen and (min-width: 768px) {
       width: 100%;

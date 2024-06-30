@@ -1,0 +1,14 @@
+.statisticsContainer {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+    padding-inline: 100px;
+}
+
+.statisticsTitle {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}

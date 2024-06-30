@@ -2,14 +2,14 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import {Exit} from './ExitModal';
+import { Exit } from './ExitModal';
 import Modal from './Modal';
 import { selectUser } from '../../redux/auth/authSlice';
 import { useModal } from '../../hooks/useModal';
-import { useDashboard } from '../../hooks/ueDashboard';
+import { useDashboard } from '../../hooks/useDashboard';
 
 import sprite from '../../images/svg/sprite.svg';
-import * as style from "../../sass/Module/Header.module.css";
+import * as style from '../../sass/Module/Header.module.css';
 
 const Header = () => {
   const { isOpen, toggle } = useModal();

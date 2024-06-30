@@ -7,14 +7,14 @@ import { AddTransactionForm } from './AddTransactionForm.jsx';
 import TransactionLines from './TransactionLines.jsx';
 
 import { useModal } from '../../hooks/useModal';
-import { useDashboard } from '../../hooks/ueDashboard.jsx';
+import { useDashboard } from '../../hooks/useDashboard.jsx';
 import {
   selectTransactionCategories,
   selectTransactions,
 } from '../../redux/transactions/transactionsSlice';
 
 import sprite from '../../images/svg/sprite.svg';
-import * as style from "../../sass/Module/TransactionTable.module.css";
+import * as style from '../../sass/Module/TransactionTable.module.css';
 
 const TransactionTable = () => {
   const { isOpen, toggle } = useModal();
@@ -23,8 +23,6 @@ const TransactionTable = () => {
   const transactions = useSelector(selectTransactions);
   const categories = useSelector(selectTransactionCategories);
 
-  
-  
   const { isBigScreenOrTablet, isMobile } = useDashboard();
 
   if (isOpen) {
