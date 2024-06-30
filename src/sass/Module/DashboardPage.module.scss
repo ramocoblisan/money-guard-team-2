@@ -1,3 +1,20 @@
-.dashboardContent {
-  background: linear-gradient(276deg, #2e1746 3.19%, #2e225f 100%);
+.dashboardPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(16, 16, 16, 1);
+  background-image: url(../../images/Ellipse\ 16.png), url(../../images/Ellipse\ 17.png), url(../../images/Ellipse\ 18.png),url(../../images/Ellipse\ 14.png),url(../../images/Ellipse\ 19.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.rightSide {
+  flex: 1;
+  padding-top: 120px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center  ;
+  color: var(--white-color);
+  border-left: 1px solid var(--white-color);
+  height: 100vh;
 }

@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 import TransactionTable from '../Components/TransactionTable';
 import Balance from '../Components/Balance';
 
-
 import { fetchTransactionsDataThunk } from '../../redux/transactions/operations';
 import useResize from '../../hooks/useResize';
 
