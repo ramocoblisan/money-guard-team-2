@@ -42,7 +42,7 @@ const DataTable = ({ reduxData }) => {
                   <ColorBox color={boxColor ? boxColor.color : '#000'} />
                   <RowText>
                     <span>{category.name}</span>
-                    <StyledTdSum>{category.total.toFixed(2)}</StyledTdSum>
+                    <StyledTdSum>{Math.abs(category.total).toFixed(2)}</StyledTdSum>
                   </RowText>
                 </StyledTdCat>
               </StyledTr>
@@ -53,7 +53,7 @@ const DataTable = ({ reduxData }) => {
         <Expenses>
           <span>Expenses:</span>
           <StyledTdTotal className="expenses">
-            {expenseSummary.toFixed(2)}
+            {Math.abs(expenseSummary).toFixed(2)}
           </StyledTdTotal>
         </Expenses>
         <Income>
