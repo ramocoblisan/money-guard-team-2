@@ -144,7 +144,7 @@ export const DataTableWrapper = styled.div`
 
 export const ChartWrapper = styled.div`
   width: 100%;
-  margin-top: 20px;
+  margin-top: 40px;
 `;
 
 export const ChartTitle = styled.h2`
