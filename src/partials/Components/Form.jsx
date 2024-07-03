@@ -11,7 +11,7 @@ import { formatDate } from '../../more/addLeaddingzero';
 
 import "react-datepicker/dist/react-datepicker.css";
 
-import * as style from "../../sass/Module/Form.module.css";
+import * as style from "../../sass/Module/Form.module.scss";
 import sprite from '../../images/svg/sprite.svg';
 
 export function Form({

@@ -1,5 +1,5 @@
 import React from 'react';
-import * as style from '../../sass/Module/Sidebar.module.css';
+import * as style from '../../sass/Module/Sidebar.module.scss';
 import { Link } from 'react-router-dom';
 import { LuLineChart, LuHome } from 'react-icons/lu';
 import Balance from '../Components/Balance';

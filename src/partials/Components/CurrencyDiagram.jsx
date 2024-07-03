@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from '../../sass/Module/CurrencyDiagram.module.css';
+import * as styles from '../../sass/Module/CurrencyDiagram.module.scss';
 import image from '../../images/currency.png';
 import imageTab from '../../images/currencyTab.png';
 

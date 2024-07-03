@@ -7,7 +7,7 @@ import {
   selectorIsLoading,
   selectorError,
 } from '../../redux/currency/selectors';
-import * as styles from '../../sass/Module/Currency.module.css';
+import * as styles from '../../sass/Module/Currency.module.scss';
 import CurrencyDiagram from './CurrencyDiagram';
 import { useDashboard } from '../../hooks/ueDashboard';
 

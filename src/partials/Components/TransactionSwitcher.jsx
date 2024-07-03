@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import * as styles from "../../sass/Module/TransactionSwitcher.module.css";
+import * as styles from "../../sass/Module/TransactionSwitcher.module.scss";
 
 const TransactionSwitcher = ({ onChange }) => {
   const [isIncome, setIsIncome] = useState(false);

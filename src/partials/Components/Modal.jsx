@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
-import * as style from "../../sass/Module/Modal.module.css";
+import * as style from "../../sass/Module/Modal.module.scss";
 import sprite from "../../images/svg/sprite.svg"
 
 const modalRoot = document.querySelector('#modal');

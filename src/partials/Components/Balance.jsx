@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from '../../sass/Module/Balance.module.css';
+import * as styles from '../../sass/Module/Balance.module.scss';
 
 const Balance = () => {
   return (

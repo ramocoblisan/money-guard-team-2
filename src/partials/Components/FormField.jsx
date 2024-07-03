@@ -1,6 +1,6 @@
 import React from 'react';
 
-import * as style from "../../sass/Module/Form.module.css";
+import * as style from "../../sass/Module/Form.module.scss";
 
 const FormInput = ({ name, register, errors, placeholder, className }) => {
   return (

@@ -14,7 +14,7 @@ import {
 } from '../../redux/transactions/transactionsSlice';
 
 import sprite from '../../images/svg/sprite.svg';
-import * as style from "../../sass/Module/TransactionTable.module.css";
+import * as style from "../../sass/Module/TransactionTable.module.scss";
 
 const TransactionTable = () => {
   const { isOpen, toggle } = useModal();

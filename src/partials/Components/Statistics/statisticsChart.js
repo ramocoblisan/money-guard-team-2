@@ -55,7 +55,7 @@ const StatisticsChart = ({ reduxData, categories }) => {
           transform: 'translate(-50%, -50%)',
         }}
       >
-        ₴ {reduxData.periodTotal.toFixed(2)}
+        RON {reduxData.periodTotal.toFixed(2)}
       </Balance>
       <DoughnutSt data={chartData} options={options} />
     </DonutContainer>

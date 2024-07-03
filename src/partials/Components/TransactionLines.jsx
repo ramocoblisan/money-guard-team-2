@@ -6,7 +6,7 @@ import { deleteTransactionThunk } from '../../redux/transactions/operations';
 import { selectTransactionCategories } from '../../redux/transactions/transactionsSlice';
 
 import sprite from '../../images/svg/sprite.svg';
-import * as style from "../../sass/Module/TransactionLines.module.css";
+import * as style from "../../sass/Module/TransactionLines.module.scss";
 
 const TransactionLines = ({ transaction, handleEditItem }) => {
   const { id, transactionDate, type, categoryId, comment, amount } =
