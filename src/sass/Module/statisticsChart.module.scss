@@ -1,7 +1,4 @@
-import styled from 'styled-components';
-import { Doughnut } from 'react-chartjs-2';
-
-export const DonutContainer = styled.div`
+.donutContainer {
   max-width: 100%;
   position: relative;
 
@@ -18,9 +15,9 @@ export const DonutContainer = styled.div`
     width: 288px;
     height: 288px;
   }
-`;
+}
 
-export const Balance = styled.div`
+.balance {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -28,9 +25,9 @@ export const Balance = styled.div`
   color: var(--dashboard-text);
   font-size: 18px;
   font-weight: 600;
-`;
+}
 
-export const DoughnutSt = styled(Doughnut)`
+.doughnutSt {
   width: 100%;
   height: auto;
-`;
+}

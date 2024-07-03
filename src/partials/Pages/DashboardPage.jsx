@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import Header from '../Components/Header';
 import Home from './HomePage';
-import Statistics from './StatisticsPage/Statistics';
+import Statistics from './Statistics';
 import * as styles from '../../sass/Module/DashboardPage.module.scss';
 import Sidebar from '../Components/Sidebar';
 

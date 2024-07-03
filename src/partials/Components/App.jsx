@@ -9,7 +9,7 @@ import Register from '../Pages/RegisterPage';
 import Login from '../Pages/LoginPage';
 import Dashboard from '../Pages/DashboardPage';
 import Home from '../Pages/HomePage';
-import StatisticsPage from '../Pages/StatisticsPage/Statistics'
+import StatisticsPage from '../Pages/Statistics'
 
 
 const basename = process.env.NODE_ENV === 'production' ? '/money-guard-team-2' : '/';

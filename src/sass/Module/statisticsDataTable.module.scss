@@ -1,8 +1,6 @@
-import styled from 'styled-components';
-
-export const Container = styled.div`
+.container {
   width: 100%;
-  
+
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     width: 336px;
   }
@@ -10,9 +8,9 @@ export const Container = styled.div`
   @media screen and (min-width: 1280px) {
     width: 395px;
   }
-`;
+}
 
-export const Head = styled.div`
+.head {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -27,37 +25,37 @@ export const Head = styled.div`
     padding: 16px 28px;
     margin-bottom: 0;
   }
-`;
+}
 
-export const HeadText = styled.div`
+.headText {
   font-family: Poppins;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-`;
+}
 
-export const Body = styled.div`
+.body {
   margin-bottom: 16px;
 
   @media screen and (min-width: 1280px) {
     padding: 0px 28px;
   }
-`;
+}
 
-export const Footer = styled.div`
+.footer {
   font-weight: bold;
+}
 
-  .income {
-    color: var(--yellow);
-  }
+.footer .income {
+  color: var(--yellow);
+}
 
-  .expenses {
-    color: var(--dashboard-text);
-  }
-`;
+.footer .expenses {
+  color: var(--dashboard-text);
+}
 
-export const Expenses = styled.div`
+.expenses {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -68,9 +66,9 @@ export const Expenses = styled.div`
   @media screen and (min-width: 1280px) {
     padding: 0px 28px;
   }
-`;
+}
 
-export const Income = styled.div`
+.income {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -80,50 +78,42 @@ export const Income = styled.div`
   @media screen and (min-width: 1280px) {
     padding: 0px 28px;
   }
-`;
+}
 
-export const ColorBox = styled.div`
+.colorBox {
   display: block;
   min-width: 24px;
   min-height: 24px;
-  background-color: ${props => props.color};
+  background-color: var(--color, #000);
   border-radius: 2px;
-`;
+}
 
-export const StyledTdCat = styled.div`
+.styledTdCat {
   display: flex;
   align-items: center;
-`;
+}
 
-export const StyledTdSum = styled.div`
+.styledTdSum {
   text-align: end;
-`;
+}
 
-export const StyledTr = styled.div`
+.styledTr {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding: 16px 16px;
 
   @media screen and (min-width: 1280px) {
     padding: 16px 28px;
   }
-`;
+}
 
-export const StyledThCat = styled.div`
-  text-align: start;
-`;
-
-export const RowText = styled.div`
+.rowText {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-left: 16px;
-`;
+}
 
-export const StyledThSum = styled.div`
+.styledTdTotal {
   text-align: end;
-`;
-
-export const StyledTdTotal = styled.div`
-  text-align: end;
-`;
+}

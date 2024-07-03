@@ -1,69 +1,55 @@
-import {
-  Body,
-  ColorBox,
-  Container,
-  Expenses,
-  Footer,
-  Head,
-  HeadText,
-  Income,
-  RowText,
-  StyledTdCat,
-  StyledTdSum,
-  StyledTdTotal,
-  StyledTr,
-} from './statisticsDataTable.styled';
+import React from 'react';
+import styles from '../../../sass/Module/StatisticsDataTable.module.scss';
 import { colors } from './statiscticsColors';
 
 const DataTable = ({ reduxData }) => {
-  // Ensure reduxData and its properties are defined
   const categoriesSummary = reduxData && reduxData.categoriesSummary ? reduxData.categoriesSummary : [];
   const expenseSummary = reduxData && reduxData.expenseSummary ? reduxData.expenseSummary : 0;
-  const incomeSummary = reduxData && reduxData.incomeSummary ? reduxData.incomeSummary : 0;
+  const incomeSummary = reduxData && reduxData.incomeSummary ? incomeSummary : 0;
 
   return (
-    <Container>
-      <Head>
-        <HeadText>
+    <div className={styles.container}>
+      <div className={styles.head}>
+        <div className={styles.headText}>
           <span>Category</span>
-        </HeadText>
-        <HeadText>
+        </div>
+        <div className={styles.headText}>
           <span>Sum</span>
-        </HeadText>
-      </Head>
-      <Body>
+        </div>
+      </div>
+      <div className={styles.body}>
         {categoriesSummary
           .filter(category => category.total !== 0)
           .map(category => {
             const boxColor = colors.find(color => color.name === category.name);
             return (
-              <StyledTr key={category.name}>
-                <StyledTdCat>
-                  <ColorBox color={boxColor ? boxColor.color : '#000'} />
-                  <RowText>
+              <div className={styles.styledTr} key={category.name}>
+                <div className={styles.styledTdCat}>
+                  <div className={styles.colorBox} style={{ '--color': boxColor ? boxColor.color : '#000' }} />
+                  <div className={styles.rowText}>
                     <span>{category.name}</span>
-                    <StyledTdSum>{Math.abs(category.total).toFixed(2)}</StyledTdSum>
-                  </RowText>
-                </StyledTdCat>
-              </StyledTr>
+                    <div className={styles.styledTdSum}>{Math.abs(category.total).toFixed(2)}</div>
+                  </div>
+                </div>
+              </div>
             );
           })}
-      </Body>
-      <Footer>
-        <Expenses>
+      </div>
+      <div className={styles.footer}>
+        <div className={styles.expenses}>
           <span>Expenses:</span>
-          <StyledTdTotal className="expenses">
+          <div className={`${styles.styledTdTotal} ${styles.expenses}`}>
             {Math.abs(expenseSummary).toFixed(2)}
-          </StyledTdTotal>
-        </Expenses>
-        <Income>
+          </div>
+        </div>
+        <div className={styles.income}>
           <span>Income:</span>
-          <StyledTdTotal className="income">
+          <div className={`${styles.styledTdTotal} ${styles.income}`}>
             {incomeSummary.toFixed(2)}
-          </StyledTdTotal>
-        </Income>
-      </Footer>
-    </Container>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
