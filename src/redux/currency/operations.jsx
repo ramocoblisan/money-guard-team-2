@@ -4,7 +4,7 @@ import Notiflix from 'notiflix';
 
 axios.defaults.baseURL = 'https://openexchangerates.org/api';
 
-export const APP_ID = 'b45597daee2245a3809d7a0b8433d8f0';
+export const APP_ID = 'f68f822ceb034fddbe767ab695a23a1d';
 
 export const getCurrency = createAsyncThunk(
   'currency/getCurrency',

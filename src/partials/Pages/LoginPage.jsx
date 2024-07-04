@@ -18,7 +18,7 @@ const Login = () => {
 
   useEffect(() => {
     if (isLoggedIn) {
-      navigate('/dashboard'); // Redirecționează către Dashboard dacă utilizatorul este autentificat
+      navigate('/dashboard'); 
     }
   }, [isLoggedIn, navigate]);
 

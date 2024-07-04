@@ -12,7 +12,7 @@ const Register = () => {
   const navigate = useNavigate();
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
-  // console.log('RegisterPage - isLoggedIn:', isLoggedIn); // Adăugați acest log
+  
 
 
   const handleRegister = async (data) => {
@@ -22,7 +22,7 @@ const Register = () => {
 
   useEffect(() => {
     if (isLoggedIn) {
-      navigate('/dashboard'); // Redirecționează către Dashboard dacă utilizatorul este autentificat
+      navigate('/dashboard'); 
     }
   }, [isLoggedIn, navigate]);
 

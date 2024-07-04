@@ -1,12 +1,17 @@
 import React from 'react';
 import * as styles from '../../sass/Module/Balance.module.scss';
+import { useSelector } from 'react-redux';
+import { selectTotalAmount } from '../../redux/transactions/transactionsSlice';
+
 
 const Balance = () => {
+  const totalAmount = useSelector(selectTotalAmount);
+
   return (
-    <div className={styles.balanceContainer}>
-      <p className={styles.balanceTitle}>Your Balance</p>
-      <div className={styles.remainBalance}>
-        <div>RON 140.00</div>
+    <div>
+      <div className={styles.balanceContainer}>
+        <div className={styles.balanceTitle}>YOUR BALANCE</div>
+        <div className={styles.remainBalance}>RON {totalAmount.toFixed(2)}</div>
       </div>
     </div>
   );

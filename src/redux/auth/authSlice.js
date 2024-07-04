@@ -14,13 +14,13 @@ const initialState = {
   user: {
     username: '',
     email: '',
+    balance: 0,
   },
   token: null,
   loading: false,
   error: false,
   isLoggedIn: false,
   isRefresh: false,
-  balance: 0,
 };
 
 const slice = createSlice({
@@ -34,13 +34,13 @@ const slice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getBalanceThunk.fulfilled, (state, { payload }) => {
-        state.balance = payload.balance;
+        state.user.balance = payload.balance;
       })
       .addCase(addTransactionThunk.fulfilled, (state, { payload }) => {
-        state.balance += payload.amount;
+        state.user.balance += payload.amount;
       })
       .addCase(deleteTransactionThunk.fulfilled, (state, { payload }) => {
-        state.balance -= payload.amount;
+        state.user.balance -= payload.amount;
       })
       .addCase(logoutThunk.fulfilled, () => {
         return initialState;
@@ -48,7 +48,7 @@ const slice = createSlice({
       .addCase(refreshThunk.fulfilled, (state, { payload }) => {
         state.user.username = payload.username;
         state.user.email = payload.email;
-        state.balance = payload.balance;
+        state.user.balance = payload.balance;
         state.isLoggedIn = true;
         state.loading = false;
         state.isRefresh = false;
@@ -76,7 +76,7 @@ const slice = createSlice({
           state.user.username = payload.user.username;
           state.user.email = payload.user.email;
           state.user.password = payload.user.password;
-          state.balance = payload.user.balance;
+          state.user.balance = payload.user.balance;
           state.token = payload.token;
           state.loading = false;
           state.isLoggedIn = true;
@@ -106,12 +106,11 @@ const slice = createSlice({
 export const authReducer = slice.reducer;
 export const { logout } = slice.actions;
 
-// Definim selectoarele separat
 export const selectUser = (state) => state.auth.user;
 export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
 export const selectToken = (state) => state.auth.token;
 export const selectIsRefresh = (state) => state.auth.isRefresh;
-export const selectBalance = (state) => state.auth.balance;
+export const selectBalance = (state) => state.auth.user.balance;
 export const selectIsLoading = (state) => state.auth.loading;
 
 export default slice;
