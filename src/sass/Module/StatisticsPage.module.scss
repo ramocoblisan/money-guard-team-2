@@ -1,27 +1,11 @@
-import styled from 'styled-components';
-
-export const PageContainer = styled.div`
+.pageContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
- 
-`;
+}
 
-export const DonutContainer = styled.div`
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-  margin-bottom: 20px;
-`;
-
-export const Balance = styled.div`
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ffffff;
-`;
-
-export const StatSection = styled.div`
+.statSection {
   color: #fff;
   display: flex;
   flex-direction: row;
@@ -30,31 +14,31 @@ export const StatSection = styled.div`
   width: 100%;
   max-width: 800px;
   padding: 20px;
-  //  background: rgba(82, 59, 126, 0.6);
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   gap: 30px;
+  
   @media screen and (max-width: 768px) {
     flex-direction: column;
     align-items: center;
   }
-`;
+}
 
-export const LeftSideWrapper = styled.div`
+.leftSideWrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   flex: 1;
-`;
+}
 
-export const RightSideStatWrapper = styled.div`
+.rightSideStatWrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   flex: 1;
-`;
+}
 
-export const DatePickerWrapper = styled.div`
+.datePickerWrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -62,19 +46,20 @@ export const DatePickerWrapper = styled.div`
   gap: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
-`;
+}
 
-export const DatePickerNoTransaction = styled.div`
-display: flex;
-flex-direction: row;
-gap: 20px;
-`;
-export const DataWrapper = styled.div`
+.datePickerNoTransaction {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.dataWrapper {
   width: 100%;
   padding-bottom: 45px;
-`;
+}
 
-export const TitleStyled = styled.h1`
+.titleStyled {
   color: #fff;
   font-family: Poppins;
   font-size: 30px;
@@ -83,41 +68,41 @@ export const TitleStyled = styled.h1`
   line-height: normal;
   margin: 0;
   align-self: flex-start;
-`;
+}
 
-export const NoTransactionsMessage = styled.p`
+.noTransactionsMessage {
   color: #fff;
   text-align: center;
   font-size: 18px;
   margin-top: 20px;
-`;
+}
 
-export const ExpenseIncomeWrapper = styled.div`
+.expenseIncomeWrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-top: 20px;
-`;
+}
 
-export const ExpenseIncomeItem = styled.div`
+.expenseIncomeItem {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-right: 20px;
-`;
+}
 
-export const ExpenseIncomeLabel = styled.span`
+.expenseIncomeLabel {
   font-size: 1rem;
   margin-bottom: 5px;
   color: #fff;
-`;
+}
 
-export const ExpenseIncomeValue = styled.span`
+.expenseIncomeValue {
   font-size: 1.5rem;
   color: #fff;
-`;
+}
 
-export const CategorySumWrapper = styled.div`
+.categorySumWrapper {
   display: flex;
   align-items: flex-start;
   margin-top: 40px;
@@ -125,45 +110,45 @@ export const CategorySumWrapper = styled.div`
   width: 100%;
   max-width: 320px;
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.05); 
+  background-color: rgba(255, 255, 255, 0.05);
   border-radius: 10px;
-`;
+}
 
-export const CategorySumItem = styled.div`
+.categorySumItem {
   font-size: 0.875rem;
   font-weight: bold;
   color: #fff;
   text-align: center;
   flex: 1;
-`;
+}
 
-export const DataTableWrapper = styled.div`
+.dataTableWrapper {
   width: 100%;
   margin-top: 20px;
-`;
+}
 
-export const ChartWrapper = styled.div`
+.chartWrapper {
   width: 100%;
   margin-top: 40px;
-`;
+}
 
-export const ChartTitle = styled.h2`
+.chartTitle {
   color: #fff;
   font-family: Poppins;
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 10px;
-`;
+}
 
-export const PieChartContainer = styled.div`
+.pieChartContainer {
   position: relative;
   text-align: center;
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
-`;
+}
 
-export const PieChartOverlay = styled.div`
+.pieChartOverlay {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -171,9 +156,9 @@ export const PieChartOverlay = styled.div`
   font-size: 1.5rem;
   color: #fff;
   font-weight: bold;
-`;
+}
 
-export const PlaceholderPieChart = styled.div`
+.placeholderPieChart {
   width: 100%;
   height: 300px;
   background-color: #39424e;
@@ -181,10 +166,10 @@ export const PlaceholderPieChart = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
+}
 
-export const PlaceholderText = styled.p`
+.placeholderText {
   color: #ccc;
   font-size: 1.2rem;
   font-weight: bold;
-`;
+}
