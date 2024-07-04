@@ -9,13 +9,12 @@ import Register from '../Pages/RegisterPage';
 import Login from '../Pages/LoginPage';
 import Dashboard from '../Pages/DashboardPage';
 import Home from '../Pages/HomePage';
-import StatisticsPage from '../Pages/StatisticsPage/Statistics'
+import StatisticsPage from '../Pages/StatisticsPage/Statistics';
 
-
-const basename = process.env.NODE_ENV === 'production' ? '/money-guard-team-2' : '/';
+const basename =
+  process.env.NODE_ENV === 'production' ? '/money-guard-team-2' : '/';
 
 function App() {
-
   return (
     <BrowserRouter basename={basename}>
       <Routes>
@@ -23,7 +22,12 @@ function App() {
         <Route path="/home" element={<BackupHome />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/dashboard/*" element={<PrivateRoute component={DashboardLayout} redirectTo="/login" />} />
+        <Route
+          path="/dashboard/*"
+          element={
+            <PrivateRoute component={DashboardLayout} redirectTo="/login" />
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
@@ -36,7 +40,14 @@ const DashboardLayout = () => {
     <Routes>
       <Route path="/" element={<Dashboard />}>
         <Route path="home" element={<Home />} />
-        <Route path="statistics" element={<Suspense fallback={<div>Loading...</div>}><StatisticsPage /></Suspense>} />
+        <Route
+          path="statistics"
+          element={
+            <Suspense fallback={<div>Loading...</div>}>
+              <StatisticsPage />
+            </Suspense>
+          }
+        />
       </Route>
     </Routes>
   );

@@ -32,7 +32,6 @@ export const StatSection = styled.div`
   padding: 20px;
   //  background: rgba(82, 59, 126, 0.6);
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   gap: 30px;
   @media screen and (max-width: 768px) {
     flex-direction: column;

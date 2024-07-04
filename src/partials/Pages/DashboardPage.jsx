@@ -8,15 +8,16 @@ import Sidebar from '../Components/Sidebar';
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className={styles.containerPage}>
       <Header />
       <div className={styles.dashboardPage}>
-        <Sidebar />
+        <div className={styles.sidebarContainer}>
+          <Sidebar />
+        </div>
         <div className={styles.rightSide}>
           <Routes>
             <Route path="home" element={<Home />} />
             <Route path="statistics" element={<Statistics />} />
-            <Route path="/" element={<Navigate to="home" />} />
             <Route path="*" element={<Navigate to="home" />} />
           </Routes>
         </div>

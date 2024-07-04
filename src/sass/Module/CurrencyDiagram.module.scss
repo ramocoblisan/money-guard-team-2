@@ -2,20 +2,8 @@
   position: relative;
   display: block;
   height: auto;
-  background: rgba(74, 86, 226, 0.1);
   max-height: 185px;
-
-  @media only screen and (max-width: 1281px) {
-      max-width: 480px;
-  }
-
-  img {
-
-      @media only screen and (max-width: 1281px) {
-          width: 480px;
-          max-height: 167px;
-      }
-  }
+  width: 100%;
 }
 
 .lowerNumber {
@@ -26,10 +14,6 @@
   color: #FF868D;
   font-size: 12px;
   font-weight: 400;
-
-  @media only screen and (max-width: 1279px) {
-      display: none;
-  }
 }
 
 .higherNumber {
@@ -40,13 +24,19 @@
   color: #FF868D;
   font-size: 12px;
   font-weight: 400;
-
-  @media only screen and (max-width: 1279px) {
-      display: none;
-  }
 }
 
 .diagramImage {
   max-width: 100%;
   height: auto;
+}
+
+/* Media query pentru tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+/* Media query pentru telefon */
+@media (max-width: 768px) {
+
 }

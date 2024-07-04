@@ -9,7 +9,7 @@ import {
 } from '../../redux/currency/selectors';
 import * as styles from '../../sass/Module/Currency.module.scss';
 import CurrencyDiagram from './CurrencyDiagram';
-import { useDashboard } from '../../hooks/ueDashboard';
+import { useDashboard } from '../../hooks/useDashboard';
 
 const ExchangeRates = () => {
   const dispatch = useDispatch();
@@ -56,29 +56,32 @@ const ExchangeRates = () => {
   };
 
   return (
-    <div>
-      <table className={styles.currencyTable}>
-        <thead className={styles.currencyTableWrapper}>
-          <tr className={styles.currencyTableHead}>
-            <th className={styles.currencyTableHeadItem}>Currency</th>
-            <th className={styles.currencyTableHeadItem}>Purchase</th>
-            <th className={styles.currencyTableHeadItem}>Sale</th>
-          </tr>
-        </thead>
-        <tbody className={styles.tableBodyList}>
+    <div className={styles.wrapperContainer}>
+      <div className={styles.gradient} />
+      <div className={styles.tableContainer}>
+        <div className={styles.currencyTableWrapper}>
+          <div className={styles.currencyTableHead}>
+            <div className={styles.currencyTableHeadItem}>Currency</div>
+            <div className={styles.currencyTableHeadItem}>Purchase</div>
+            <div className={styles.currencyTableHeadItem}>Sale</div>
+          </div>
+        </div>
+        <div className={styles.tableBodyList}>
           {Object.keys(displayedRates).map(currency => {
             const purchaseRate = displayedRates[currency] * 0.98;
             const saleRate = displayedRates[currency] * 1.02;
             return (
-              <tr className={styles.tableBody} key={currency}>
-                <td className={styles.tableItem}>{currency}</td>
-                <td className={styles.tableItem}>{purchaseRate.toFixed(2)}</td>
-                <td className={styles.tableItem}>{saleRate.toFixed(2)}</td>
-              </tr>
+              <div className={styles.tableBody} key={currency}>
+                <div className={styles.tableItem}>{currency}</div>
+                <div className={styles.tableItem}>
+                  {purchaseRate.toFixed(2)}
+                </div>
+                <div className={styles.tableItem}>{saleRate.toFixed(2)}</div>
+              </div>
             );
           })}
-        </tbody>
-      </table>
+        </div>
+      </div>
       <CurrencyDiagram
         currency={saleRates}
         isBigScreen={isBigScreen}

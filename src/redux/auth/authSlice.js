@@ -1,3 +1,4 @@
+// authSlice.js
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 import {
@@ -14,59 +15,38 @@ const initialState = {
   user: {
     username: '',
     email: '',
+    balance: 0,
   },
   token: null,
   loading: false,
   error: false,
   isLoggedIn: false,
   isRefresh: false,
-  balance: 0,
 };
 
 const slice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    logout: (state) => {
-      return initialState;
-    },
+    logout: (state) => initialState,
   },
   extraReducers: (builder) => {
     builder
       .addCase(getBalanceThunk.fulfilled, (state, { payload }) => {
-        state.balance = payload.balance;
+        state.user.balance = payload.balance;
       })
       .addCase(addTransactionThunk.fulfilled, (state, { payload }) => {
-        state.balance += payload.amount;
+        state.user.balance += payload.amount;
       })
       .addCase(deleteTransactionThunk.fulfilled, (state, { payload }) => {
-        state.balance -= payload.amount;
+        state.user.balance -= payload.amount;
       })
-      .addCase(logoutThunk.fulfilled, () => {
-        return initialState;
-      })
+      .addCase(logoutThunk.fulfilled, () => initialState)
       .addCase(refreshThunk.fulfilled, (state, { payload }) => {
         state.user.username = payload.username;
         state.user.email = payload.email;
-        state.balance = payload.balance;
+        state.user.balance = payload.balance;
         state.isLoggedIn = true;
-        state.loading = false;
-        state.isRefresh = false;
-      })
-      .addCase(loginThunk.rejected, (state, { payload }) => {
-        state.error = payload;
-        state.loading = false;
-        state.isRefresh = false;
-        toast.error(payload);
-      })
-      .addCase(registerThunk.rejected, (state, { payload }) => {
-        state.error = payload;
-        state.loading = false;
-        state.isRefresh = false;
-        toast.error(payload);
-      })
-      .addCase(refreshThunk.rejected, (state, { payload }) => {
-        state.error = payload;
         state.loading = false;
         state.isRefresh = false;
       })
@@ -76,7 +56,7 @@ const slice = createSlice({
           state.user.username = payload.user.username;
           state.user.email = payload.user.email;
           state.user.password = payload.user.password;
-          state.balance = payload.user.balance;
+          state.user.balance = payload.user.balance;
           state.token = payload.token;
           state.loading = false;
           state.isLoggedIn = true;
@@ -106,12 +86,12 @@ const slice = createSlice({
 export const authReducer = slice.reducer;
 export const { logout } = slice.actions;
 
-// Definim selectoarele separat
+// Selectoare
 export const selectUser = (state) => state.auth.user;
 export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
 export const selectToken = (state) => state.auth.token;
 export const selectIsRefresh = (state) => state.auth.isRefresh;
-export const selectBalance = (state) => state.auth.balance;
+export const selectBalance = (state) => state.auth.user.balance;
 export const selectIsLoading = (state) => state.auth.loading;
 
 export default slice;

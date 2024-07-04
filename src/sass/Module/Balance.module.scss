@@ -28,3 +28,25 @@
   font-weight: 700;
   height: 36px;
 }
+
+/* Media query pentru tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .balanceContainer {
+    max-width: 1024px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80px;
+    width: 336px;
+  }
+}
+
+/* Media query pentru telefon */
+@media (max-width: 768px) {
+  .balanceContainer {
+    width: 280px;
+    height: 80px;
+    display: flex;
+
+  }
+}

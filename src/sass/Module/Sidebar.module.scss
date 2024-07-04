@@ -2,7 +2,7 @@
   height: 100vh;
   width: 480px;
   padding-top: 120px;
-
+  margin: auto;
 }
 .menu {
   padding-left: 16px;
@@ -18,4 +18,52 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 27px;
+}
+
+.navItem:hover {
+  transform: scale(1.03);
+  font-weight: 700;
+  color: #7147f0;
+}
+
+.iconMenu:hover {
+  box-shadow: 0 3px 10px 0 rgba(74, 86, 226, 0.5);
+  fill: #7147f0;
+}
+
+.navItem.active,
+.iconMenu.active {
+  font-weight: 700;
+  color: #7147f0;
+}
+
+/* Media query pentru tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .sidebarContainer {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100vh;
+    margin: 32px;
+  }
+}
+
+/* Media query pentru telefon */
+@media (max-width: 768px) {
+  .menu {
+    max-width: 768px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  
+  }
+
+  .iconMenu {
+    height: 44px;
+    width: 44px;
+  }
+
+  .textMenu {
+    display: none;
+  }
 }
