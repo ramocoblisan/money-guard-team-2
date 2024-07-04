@@ -9,7 +9,7 @@ import { useModal } from '../../hooks/useModal';
 import { useDashboard } from '../../hooks/useDashboard';
 
 import sprite from '../../images/svg/sprite.svg';
-import * as style from '../../sass/Module/Header.module.css';
+import * as style from '../../sass/Module/Header.module.scss';
 
 const Header = () => {
   const { isOpen, toggle } = useModal();

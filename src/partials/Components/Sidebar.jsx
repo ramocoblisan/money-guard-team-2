@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../sass/Module/Sidebar.module.css';
+import * as style from '../../sass/Module/Sidebar.module.scss';
 import { Link } from 'react-router-dom';
 import { LuLineChart, LuHome } from 'react-icons/lu';
 import Balance from '../Components/Balance';
@@ -7,12 +7,12 @@ import Currency from '../Components/Currency';
 
 const Sidebar = () => {
   return (
-    <div className={styles.sidebarContainer}>
+    <div className={style.sidebarContainer}>
       <nav style={{ marginRight: '100px' }}>
-        <ul className={styles.menu}>
+        <ul className={style.menu}>
           <li>
             <Link to="/dashboard/home">
-              <div className={styles.navItem}>
+              <div className={style.navItem}>
                 <LuHome />
                 Home
               </div>
@@ -20,7 +20,7 @@ const Sidebar = () => {
           </li>
           <li>
             <Link to="/dashboard/statistics">
-              <div className={styles.navItem}>
+              <div className={style.navItem}>
                 <LuLineChart />
                 Statistics
               </div>

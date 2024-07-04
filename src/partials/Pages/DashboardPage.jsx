@@ -1,14 +1,9 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-} from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import Header from '../Components/Header';
 import Home from './HomePage';
-import Statistics from './StatisticsPage';
-import styles from '../../sass/Module/DashboardPage.module.css';
+import Statistics from './StatisticsPage/Statistics';
+import * as styles from '../../sass/Module/DashboardPage.module.scss';
 import Sidebar from '../Components/Sidebar';
 
 const Dashboard = () => {
@@ -22,6 +17,7 @@ const Dashboard = () => {
             <Route path="home" element={<Home />} />
             <Route path="statistics" element={<Statistics />} />
             <Route path="/" element={<Navigate to="home" />} />
+            <Route path="*" element={<Navigate to="home" />} />
           </Routes>
         </div>
       </div>

@@ -5,6 +5,7 @@ export const PageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
+ 
 `;
 
 export const DonutContainer = styled.div`
@@ -29,7 +30,7 @@ export const StatSection = styled.div`
   width: 100%;
   max-width: 800px;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.2);
+  //  background: rgba(82, 59, 126, 0.6);
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   gap: 30px;
@@ -143,7 +144,7 @@ export const DataTableWrapper = styled.div`
 
 export const ChartWrapper = styled.div`
   width: 100%;
-  margin-top: 20px;
+  margin-top: 40px;
 `;
 
 export const ChartTitle = styled.h2`

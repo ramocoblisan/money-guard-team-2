@@ -1,9 +1,9 @@
 import { RotatingLines } from 'react-loader-spinner';
-import { SpinnerStyle } from './Spinner.styled';
+import * as style from '../../sass/Module/Spinner.module.scss';
 
 export const SpinnerLoader = () => {
   return (
-    <SpinnerStyle>
+    <div className={style.container}>
       <RotatingLines
         strokeColor="lavender"
         strokeWidth="4"
@@ -11,6 +11,6 @@ export const SpinnerLoader = () => {
         width="96"
         visible={true}
       />
-    </SpinnerStyle>
+    </div>
   );
 };

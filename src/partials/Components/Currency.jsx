@@ -7,9 +7,9 @@ import {
   selectorIsLoading,
   selectorError,
 } from '../../redux/currency/selectors';
-import styles from '../../sass/Module/Currency.module.css';
+import * as styles from '../../sass/Module/Currency.module.scss';
 import CurrencyDiagram from './CurrencyDiagram';
-import { useDashboard } from '../../hooks/useDashboard';
+import { useDashboard } from '../../hooks/ueDashboard';
 
 const ExchangeRates = () => {
   const dispatch = useDispatch();
@@ -56,7 +56,7 @@ const ExchangeRates = () => {
   };
 
   return (
-    <div className={styles.exchangeRates}>
+    <div>
       <table className={styles.currencyTable}>
         <thead className={styles.currencyTableWrapper}>
           <tr className={styles.currencyTableHead}>

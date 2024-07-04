@@ -1,18 +1,19 @@
 import React from 'react';
-import { nanoid } from 'nanoid';
-import styles from '../../sass/Module/CurrencyDiagram.module.css';
+import * as styles from '../../sass/Module/CurrencyDiagram.module.scss';
 import image from '../../images/currency.png';
 import imageTab from '../../images/currencyTab.png';
 
 const CurrencyDiagram = ({ currency, isBigScreen, isTabletOrMobile }) => {
+  const generateId = () => Math.random().toString(36).substr(2, 9);
+
   return (
-    <div className={styles.CurrencyDiagramWrapper}>
+    <div>
       <div className={styles.currencyDiagram}>
         {currency &&
           Object.keys(currency).map(key => {
             if (key === 'USD') {
               return (
-                <div key={nanoid()} className={styles.lowerNumber}>
+                <div key={generateId()} className={styles.lowerNumber}>
                   {Number(currency[key]).toFixed(2)} RON
                 </div>
               );
@@ -23,7 +24,7 @@ const CurrencyDiagram = ({ currency, isBigScreen, isTabletOrMobile }) => {
           Object.keys(currency).map(key => {
             if (key === 'EUR') {
               return (
-                <div key={nanoid()} className={styles.higherNumber}>
+                <div key={generateId()} className={styles.higherNumber}>
                   {Number(currency[key]).toFixed(2)} RON
                 </div>
               );
