@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from '../../../sass/Module/StatisticsDataTable.module.scss';
+import * as styles from '../../../sass/Module/statisticsDataTable.module.scss';
 import { colors } from './statiscticsColors';
 
 const DataTable = ({ reduxData }) => {
